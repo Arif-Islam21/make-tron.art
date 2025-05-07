@@ -41,6 +41,7 @@ import InvestmentStats from "./extra/home/InvestmentStats";
 import image from "../../src/assets/images/1x/rendering.jpg";
 import PriceList from "./extra/home/PriceList";
 import Partners from "./extra/home/Partners";
+import HomeTimer from "./NewAddition/HomeTimer";
 
 const home = () => {
   const [data, setData] = useState({});
@@ -105,11 +106,11 @@ const home = () => {
           toggleTelegramPopUp={toggleTelegramPopUp}
         ></Header>
         <div className="index-wrap">
-          <h2 className="fs-4 fw-semibold">Dashboard</h2>
-          <HomeNotice></HomeNotice>
+          {/* <HomeNotice></HomeNotice> */}
+          <HomeTimer />
           <HomeLinks></HomeLinks>
           <HomeSlider />
-          <TotalAssets data={data}/>
+          <TotalAssets data={data} />
           <InvestmentStats />
           <div>
             <img
