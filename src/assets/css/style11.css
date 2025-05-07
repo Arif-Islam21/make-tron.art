@@ -2001,7 +2001,7 @@
   transition: opacity 0.3s;
 }
 .nav-bar-wrap.is-scroll-state::before {
-  background: #000;
+  background: #067a54;
 }
 
 .nav-bar-wrap .nav-bar {

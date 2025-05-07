@@ -349,7 +349,9 @@
 #navBarItem26 .base-lang-wrap {
   border-radius: var(--btn-radius);
   margin-right: 0;
-  box-shadow: var(--box-shadow);
+  margin-left: 10px;
+  /* box-shadow: var(--box-shadow); */
+  box-shadow: 0px -6px 12px rgba(0, 0, 0, 0.461);
 }
 
 #navBarItem26 .left {

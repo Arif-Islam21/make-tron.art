@@ -11317,7 +11317,7 @@ video {
 :root {
   --text-black: #000;
   --text-white: #fff;
-  --bg-weight: rgb(37 37 37 / 19%);
+  /* --bg-weight: rgb(37 37 37 / 19%); */
   --golden-gradient: linear-gradient(60deg, #fcecb9, #efc26f);
   --box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
     0 2px 4px -2px rgba(0, 0, 0, 0.1);
@@ -11404,7 +11404,7 @@ textarea {
     rgba(255, 240, 130, 0.29) 0%,
     rgba(255, 222, 5, 0.82) 100%
   );
-  --bg-weight: #295af6;
+  --bg-weight: #1a5c47;
   --btn-bg3: #000;
   --btn-text: #fff;
   --btn-text2: #f9b44b;
@@ -11430,7 +11430,8 @@ textarea {
 
 .a-t-1 .base-lang-wrap {
   border-radius: var(--btn-radius);
-  background: var(--bg-weight);
+  background: transparent;
+  /* border: 1px solid black; */
   -webkit-backdrop-filter: blur(6.5px);
   backdrop-filter: blur(6.5px);
 }
@@ -28483,8 +28484,8 @@ body {
   color: var(--btn-text);
   background: linear-gradient(
     135deg,
-    rgba(18, 46, 184, 1),
-    rgba(30, 66, 247, 1)
+    #0cc288,
+    #024c78
   );
   font-size: 14px;
   font-family: Helvetica Neue, Helvetica, sans-serif;
@@ -28522,8 +28523,8 @@ html {
   --primary-second: #0a38cc; /* Secondary primary color (same as primary) */
   --bg: linear-gradient(
     90deg,
-    #3a497a,
-    #3b54a4
+    #094857,
+    #283b75
   ); /* Background with gold gradient */
   --bg-tab: #000; /* Background color for tabs */
   --bg-input: #fff; /* Background color for inputs with transparency */

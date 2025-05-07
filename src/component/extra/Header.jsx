@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
-import logo from "../../assets/images/1x/logoNew.png";
+import logo from "../../assets/images/piCoins/icons/piCoins.png";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import { FaTelegramPlane } from "react-icons/fa";
+import { IoMail } from "react-icons/io5";
 
 const Header = ({ toggleLangPopup, toggleTelegramPopUp }) => {
   const [isScrolled, setScroll] = useState(false);
@@ -85,8 +86,8 @@ const Header = ({ toggleLangPopup, toggleTelegramPopUp }) => {
       id="navbar"
       className={
         isScrolled
-          ? "header nav-bar-wrap bg-black h-style is-scroll-state"
-          : "header nav-bar-wrap bg-black h-style"
+          ? "header nav-bar-wrap h-style is-scroll-state"
+          : "header nav-bar-wrap h-style"
       }
     >
       <div className="nav-bar ">
@@ -96,31 +97,30 @@ const Header = ({ toggleLangPopup, toggleTelegramPopUp }) => {
               <div className=":uno: base-logo flex items-center small-logo">
                 <img className="site-img h-full w-full rd-50%" src={logo} />
               </div>
+              <div className=" name text-18px! mx-2">
+                <span className="text-truncate">Pi Coin</span>
+              </div>
             </div>
-            <div className="center name text-18px!">
-              <span className="text-truncate text-uppercase">
-                Make-Tron.Art
-              </span>
-            </div>
+
             <div className="right">
-              {/* <Link to="/notice" className="base-alarm-logo-btn cursor-pointer">
-                <div className="i-mdi:email-mark-as-unread text-18px"></div>
-              </Link> */}
+              <Link to="/notice" className="base-alarm-logo-btn cursor-pointer">
+                <IoMail size={18} />
+              </Link>
               <div
-                className=" cursor-pointer"
+                className=" cursor-pointer mx-2"
                 // className="base-help-btn cursor-pointer"
                 onClick={toggleTelegramPopUp}
               >
-                <FaTelegramPlane color="#132FBC" size={26} />
+                <FaTelegramPlane color="#085a82" size={26} />
               </div>
-              {/* <div>
+              <div>
                 <div className="base-lang-wrap" onClick={toggleLangPopup}>
                   <div className="i-ph:globe mr-2px text-18px c-$btn-text"></div>
                   <span className="c-$btn-text" id="languageSelect">
                     {displayLanguage}
                   </span>
                 </div>
-              </div> */}
+              </div>
             </div>
           </div>
         </div>
