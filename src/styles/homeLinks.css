@@ -31,3 +31,45 @@
 .icon-wrapper:hover {
   background-color: #102830;
 }
+
+.link-box-container {
+  padding: 1rem;
+  background: #111827; /* Dark background */
+  border-radius: 1.5rem;
+  box-shadow: 0 0 25px rgba(0, 255, 200, 0.05);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.link-box {
+  background: linear-gradient(135deg, #1f2937, #111827);
+  padding: 0.6rem;
+  border-radius: 1.25rem;
+  width: 100%;
+  flex: 1 1 calc(33.333% - 1rem);
+  max-width: calc(33.333% - 1rem);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 255, 200, 0.15);
+  box-shadow: 0 0 10px rgba(0, 255, 200, 0.05);
+}
+
+.link-box:hover {
+  transform: translateY(-5px) scale(1.03);
+  background: linear-gradient(135deg, #1c1c34, #0f172a);
+  box-shadow: 0 0 25px rgba(0, 255, 200, 0.15);
+}
+
+.link-box .icon-wrapper {
+  color: #00ffc6;
+  margin-bottom: 0.5rem;
+}
+
+/* Text styling */
+.link-box .small {
+  font-size: 0.9rem;
+  color: #e0fdfd;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}

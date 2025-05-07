@@ -9,18 +9,14 @@ import axios from "axios";
 import Loader from "../../../component/extra/loader";
 import { useState } from "react";
 import "../../../styles/homeLinks.css";
-import { CiLogout } from "react-icons/ci";
-import { IoCloudDownload } from "react-icons/io5";
-import { FaClipboardList } from "react-icons/fa";
+import { Container, Row, Col } from "react-bootstrap";
+import { FaFileInvoiceDollar } from "react-icons/fa6";
+import { PiHandWithdrawFill } from "react-icons/pi";
 import { FcInvite } from "react-icons/fc";
-import { GrAnnounce } from "react-icons/gr";
-import { Container, Row, Col, Button, Card, Spinner } from "react-bootstrap";
-import recharge from "../../../assets/images/coins/dollar.png";
-import withdraw from "../../../assets/images/coins/withdraw.png";
-import invite from "../../../assets/images/coins/invite.png";
-import team from "../../../assets/images/coins/team.png";
-import about from "../../../assets/images/coins/about.png";
-import ann from "../../../assets/images/coins/ann.png";
+import { RiTeamFill } from "react-icons/ri";
+import { MdMessage } from "react-icons/md";
+import { TfiAnnouncement } from "react-icons/tfi";
+
 import AnnouncementExtra from "../../partial/AnnouncementExtra";
 
 const HomeLinks = () => {
@@ -91,77 +87,77 @@ const HomeLinks = () => {
   };
 
   return (
-    <div className="py-3 bg-dark rounded-4 mt-4">
+    <div className="py-3 rounded-4 mt-4">
       {isLoader && (
         <div className="d-flex justify-content-center mb-3">
           <Loader />
         </div>
       )}
       <Container>
-        <Row className="g-4">
-          <Col xs={4} className="text-center">
+        <Row className="g-4 link-box-container">
+          <Col xs={4} className="text-center link-box">
             <Link
               to="/recharge-method"
               className="text-decoration-none text-white"
             >
               <div className="icon-wrapper mb-2">
-                <img src={recharge} alt="recharge" />
+                <FaFileInvoiceDollar size={29} />
               </div>
               <div className="small">{t("recharge")}</div>
             </Link>
           </Col>
 
-          <Col xs={4} className="text-center">
+          <Col xs={4} className="text-center link-box">
             <Link
               to="/withdraw-trx"
               className="text-decoration-none text-white"
             >
               <div className="icon-wrapper mb-2">
-                <img src={withdraw} alt="recharge" />
+                <PiHandWithdrawFill size={29} />
               </div>
               <div className="small">{t("withdraw")}</div>
             </Link>
           </Col>
 
-          <Col xs={4} className="text-center">
+          <Col xs={4} className="text-center link-box">
             <div>
               <Link to="/team" className="text-decoration-none text-white">
                 <div className="icon-wrapper mb-2">
-                  <img src={invite} alt="recharge" />
+                  <FcInvite size={29} />
                 </div>
                 <div className="small">{t("Invite")}</div>
               </Link>
             </div>
           </Col>
 
-          <Col xs={4} className="text-center">
+          <Col xs={4} className="text-center link-box">
             <Link to="/team" className="text-decoration-none text-white">
               <div className="icon-wrapper mb-2">
-                <img src={team} alt="recharge" />
+                <RiTeamFill size={29} />
               </div>
               <div className="small">{t("team")}</div>
             </Link>
           </Col>
 
-          <Col xs={4} className="text-center">
+          <Col xs={4} className="text-center link-box">
             <Link
               to="/company-profile"
               className="text-decoration-none text-white"
             >
               <div className="icon-wrapper mb-2">
-                <img src={about} alt="recharge" />
+                <MdMessage size={29} />
               </div>
               <div className="small">{t("About Us")}</div>
             </Link>
           </Col>
 
-          <Col xs={4} className="text-center">
+          <Col xs={4} className="text-center link-box">
             <Link
               to="/announcement"
               className="text-decoration-none text-white"
             >
               <div className="icon-wrapper mb-2">
-                <img src={ann} alt="recharge" />
+                <TfiAnnouncement size={29} />
               </div>
               <div className="small">{t("announcement")}</div>
             </Link>
