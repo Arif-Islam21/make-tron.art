@@ -42,6 +42,8 @@ import image from "../../src/assets/images/1x/rendering.jpg";
 import PriceList from "./extra/home/PriceList";
 import Partners from "./extra/home/Partners";
 import HomeTimer from "./NewAddition/HomeTimer";
+import PiMining from "./extra/home/PiMining";
+import TaskCenter from "./extra/home/TaskCenter";
 
 const home = () => {
   const [data, setData] = useState({});
@@ -109,22 +111,27 @@ const home = () => {
           {/* <HomeNotice></HomeNotice> */}
           <HomeTimer />
           <HomeLinks></HomeLinks>
-          <HomeSlider />
-          <TotalAssets data={data} />
-          <InvestmentStats />
-          <div>
+          <PiMining />
+          <TaskCenter />
+
+          {/* <HomeSlider /> */}
+          {/* <TotalAssets data={data} /> */}
+          {/* <InvestmentStats /> */}
+          {/* <div>
             <img
               src={image}
               alt="bitcoin image"
               className="rounded-2 w-100 my-3"
             />
-          </div>
+          </div> */}
 
-          <HomeMemberList></HomeMemberList>
+          {/* <HomeMemberList></HomeMemberList>
           <PriceList />
-          <Partners />
+          <Partners /> */}
         </div>
-        <Navbar></Navbar>
+        <div className="mt-4">
+          <Navbar></Navbar>
+        </div>
       </div>
       {/* layout-tab-bar end */}
       <Announcement />

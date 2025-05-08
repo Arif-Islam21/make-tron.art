@@ -1,6 +1,6 @@
 0f5160
 pi-coin
-7a185f
+#7A185F
 pi logo, change
 
 # React + Vite
