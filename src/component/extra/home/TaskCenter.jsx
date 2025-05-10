@@ -1,66 +1,47 @@
 import TaskCenterCard from "../../Cards/TaskCenterCard";
+import TasksCard from "../../Cards/TasksCard";
 
 const TaskCenter = () => {
   const cardData = [
     {
-      rewardName: "Level 1 team deposit reward",
-      rewardAmount: 500000.0,
-      rewardConditionDescription:
-        "When your first-level subordinate deposit reaches 5500USDT, you can receive the reward, which is limited to 5 times a day.",
-      dailyLimit: 5,
-      progress: {
-        received: 0,
-        total: 5,
-      },
-      invitationRequirement: {
-        invited: 0,
+      title: "Level 1 team rewards",
+      reward: "+500,000.00",
+      description:
+        "When your first-level subordinate deposit reaches 5500 USDT, you can receive the reward, which is limited to 5 times a day.",
+      progress: "0 / 5",
+      invitees: {
+        current: 0,
         required: 1,
-        level: 1,
       },
     },
     {
-      rewardName: "Daily invitation first-level team reward (1 member)",
-      rewardAmount: 2500.0,
-      rewardConditionDescription: "1 member of first-level team",
-      dailyLimit: 1,
-      progress: {
-        received: 0,
-        total: 1,
-      },
-      invitationRequirement: {
-        invited: 0,
+      title: "Daily invitation first-level team rewards",
+      reward: "+2,500.00",
+      description: "1 member of first-level team",
+      progress: "0 / 1",
+      invitees: {
+        current: 1,
         required: 1,
-        level: 1,
       },
     },
     {
-      rewardName: "Daily invitation first-level team reward (3 members)",
-      rewardAmount: 13500.0,
-      rewardConditionDescription: "3 people in the first level team",
-      dailyLimit: 1,
-      progress: {
-        received: 0,
-        total: 1,
-      },
-      invitationRequirement: {
-        invited: 0,
+      title: "Daily invitation first-level team rewards",
+      reward: "+13,500.00",
+      description: "3 people in the first level team",
+      progress: "0 / 1",
+      invitees: {
+        current: 1,
         required: 3,
-        level: 1,
       },
     },
     {
-      rewardName: "Rewards for inviting 3 level 3 teams",
-      rewardAmount: 5500.0,
-      rewardConditionDescription: "Level 3 team 3 people",
-      dailyLimit: 1,
-      progress: {
-        received: 0,
-        total: 1,
-      },
-      invitationRequirement: {
-        invited: 0,
+      title: "Rewards for inviting 3 level 3 teams",
+      reward: "+5,500.00",
+      description: "Level 3 team 3 people",
+      progress: "0 / 1",
+      invitees: {
+        current: 2,
         required: 3,
-        level: 3,
       },
     },
   ];
@@ -73,6 +54,7 @@ const TaskCenter = () => {
           <TaskCenterCard key={idx} reward={reward} />
         ))}
       </div>
+      <TasksCard />
     </div>
   );
 };

@@ -11,6 +11,7 @@ import "../assets/css/style8.css";
 import "../assets/css/style9.css";
 import "../assets/css/style10.css";
 import "../assets/css/style11.css";
+import "../styles/task.css";
 
 import taskcrypto_mining from "../assets/images/taskcrypto_mining.webp";
 //component
@@ -23,13 +24,15 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import Header from "./extra/Header";
-import SupportLink from "./extra/supportLink";
+import { GoDash } from "react-icons/go";
+import { IoMdPerson } from "react-icons/io";
 import LanguagePopUp from "./extra/LanguagePopUp";
 import TelegramPopUp from "./extra/TelegramPopUp";
 
 import CustomLoader from "./extra/customLoader";
 import Loader from "./extra/loader";
 import image from "../assets/images/slider/miningSvg.webp";
+import AirdropCountdown from "./NewAddition/AirdropCountdown";
 
 const task = () => {
   const [targetDate, setTargetDate] = useState(null);
@@ -121,47 +124,8 @@ const task = () => {
 
         <div data-v-7f399f52="" className="mission-wrap">
           <div data-v-7f399f52="" className="mission-wrap-content">
-            <div data-v-7f399f52="" className="top-info">
-              <div data-v-7f399f52="" className="mission-chain-info">
-                <div data-v-7f399f52="" className="grid-2">
-                  <div data-v-7f399f52="">
-                    <div
-                      data-v-7f399f52=""
-                      className="desc text-center text-sm"
-                      style={{ color: "#fff" }}
-                    >
-                      {t("all_task_for_today")}
-                    </div>
-                    <div
-                      data-v-7f399f52=""
-                      className="value text-center text-white"
-                    >
-                      {data?.product && data.withdraw_status > 0 ? 1 : 0}
-                    </div>
-                  </div>
-                  <div data-v-7f399f52="">
-                    <div
-                      data-v-7f399f52=""
-                      className="desc text-center text-sm"
-                      style={{ color: "#fff" }}
-                    >
-                      {t("todays_remaining_tasks")}
-                    </div>
-                    <div
-                      data-v-7f399f52=""
-                      className="value text-center text-white"
-                    >
-                      {data?.product && data.withdraw_status ? "1" : "0"}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
             {/* top info ends */}
 
-            <div>
-              <img src={image} alt="svg image" className="w-100 h-auto" />
-            </div>
             <div
               data-v-7f399f52=""
               className=":uno: container-card relative rd-$card-radius p-$mg c-$btn-text"
@@ -234,7 +198,8 @@ const task = () => {
                                     {t("income")}
                                   </div>
                                   <div data-v-7f399f52="" className="price red">
-                                    {parseFloat(data?.commission).toFixed(2)} USDT
+                                    {parseFloat(data?.commission).toFixed(2)}{" "}
+                                    USDT
                                   </div>
                                 </div>
                               </div>
@@ -263,6 +228,19 @@ const task = () => {
                   )}
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+
+        <AirdropCountdown />
+        {/* RANKING GOES HERE */}
+        <div>
+          <h2 className="text-center fw-semibold fs-4">Holding Ranking</h2>
+          <div className="my-4 my-ranking">
+            <div className="d-flex align-items-center gap-1">
+              <GoDash size={28} />
+              <IoMdPerson size={28} />
+              <h2 className=" fw-semibold">jhonDoe@gmail.com</h2>
             </div>
           </div>
         </div>

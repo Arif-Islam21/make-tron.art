@@ -88,7 +88,7 @@ const Navbar = () => {
           {({ isActive }) => (
             <div className={`tab-item ${isActive ? "active" : ""}`}>
               <i className="bi bi-house-door-fill tab-icon"></i>
-              <div className="tab-label">{t("home")}</div>
+              <div className="tab-label">{t("Mine")}</div>
             </div>
           )}
         </NavLink>
@@ -96,7 +96,7 @@ const Navbar = () => {
           {({ isActive }) => (
             <div className={`tab-item ${isActive ? "active" : ""}`}>
               <i className="bi bi-cpu tab-icon"></i>
-              <div className="tab-label">{t("task")}</div>
+              <div className="tab-label">{t("Leaderboard")}</div>
             </div>
           )}
         </NavLink>

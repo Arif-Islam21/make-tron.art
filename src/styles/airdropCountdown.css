@@ -1,0 +1,27 @@
+.timer-card {
+  box-shadow: 0 0 20px rgba(0, 123, 255, 0.3);
+  background: linear-gradient(135deg, #0f9b0f, #000000);
+  border-radius: 12px;
+  max-width: 520px;
+}
+
+.time-box {
+  background-color: #ffffff;
+  color: #0000ff;
+  border-radius: 10px;
+  padding: 10px 15px;
+  min-width: 60px;
+}
+
+.time-value {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.time-label {
+  margin-top: 5px;
+  color: #000;
+  font-size: bold;
+  text-transform: capitalize;
+}

@@ -1,10 +1,10 @@
-.mining-card {
-  background-color: #1a202c; /* Dark background */
-  border: 1px solid #2d3748; /* Darker border */
-  color: #f7fafc; /* Light text */
-  border-radius: 0.75rem; /* Rounded corners */
+/* .mining-card {
+  background-color: #1a202c; 
+  border: 1px solid #2d3748; 
+  color: #f7fafc; 
+  border-radius: 0.75rem; 
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3),
-    0 2px 4px -1px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    0 2px 4px -1px rgba(0, 0, 0, 0.2); 
   transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
@@ -15,23 +15,23 @@
 }
 
 .card-title {
-  color: #f56565; /* A shade of red for emphasis */
+  color: #f56565; 
 }
 
 .reward-amount {
-  color: #48bb78; /* A shade of green for positive values */
+  color: #48bb78; 
   font-weight: bold;
   font-size: 1.2rem;
 }
 
 .progress-bar-custom {
-  background-color: #2d3748; /* Dark progress bar background */
+  background-color: #2d3748; 
   border-radius: 0.5rem;
   height: 0.75rem;
 }
 
 .progress-bar-custom .progress-bar {
-  background: linear-gradient(to right, #f56565, #ed8936); /* Gradient fill */
+  background: linear-gradient(to right, #f56565, #ed8936); 
   border-radius: 0.5rem;
   animation: fillAnimation 2s linear infinite;
 }
@@ -53,7 +53,7 @@
 }
 
 .claim-button {
-  background: linear-gradient(to right, #f56565, #ed8936); /* Gradient button */
+  background: linear-gradient(to right, #f56565, #ed8936); 
   color: white;
   border: none;
   padding: 0.75rem 1.5rem;
@@ -70,4 +70,46 @@
 
 .claim-button:active {
   transform: scale(0.95);
+} */
+
+.reward-card {
+  border-left: 4px solid #0d6efd;
+  border-radius: 1rem;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: white;
+}
+
+.reward-amount {
+  color: #28a745;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.reward-stats small {
+  font-size: 0.85rem;
+}
+.custom-progress-bar {
+  border: 2px solid #ccc; /* or any color you want */
+  border-radius: 10px; /* Optional: rounding corners */
+}
+
+.progress-container {
+  width: 100%;
+  background-color: #e0e0e0;
+  border-radius: 8px;
+  height: 12px;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: #28d19c; /* crypto-green */
+  transition: width 0.3s ease;
+}
+
+.progress-label {
+  font-size: 14px;
+  color: #fff;
+  text-align: right;
 }
