@@ -11531,7 +11531,8 @@ textarea {
 
 .a-t-1 .base-user-tab .tab-item {
   width: 50%;
-  color: #ffffff80;
+  color: #0f5160;
+  font-weight: bold;
 }
 
 .a-t-1 .base-user-tab .tab-item.active {

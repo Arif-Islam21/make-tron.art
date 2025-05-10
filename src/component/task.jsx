@@ -31,8 +31,9 @@ import TelegramPopUp from "./extra/TelegramPopUp";
 
 import CustomLoader from "./extra/customLoader";
 import Loader from "./extra/loader";
-import image from "../assets/images/slider/miningSvg.webp";
+import piImg from "../assets/images/piCoins/icons/piCoins.png";
 import AirdropCountdown from "./NewAddition/AirdropCountdown";
+import RankingList from "./NewAddition/RankingList";
 
 const task = () => {
   const [targetDate, setTargetDate] = useState(null);
@@ -139,13 +140,13 @@ const task = () => {
                   className=":uno: tab-item h-full flex cursor-pointer items-center justify-center active"
                   to="/task"
                 >
-                  {t("in_progress")}
+                  {t("Holding Ranking")}
                 </Link>
                 <Link
                   className=":uno: tab-item h-full flex cursor-pointer items-center justify-center"
                   to="/task-completed"
                 >
-                  {t("completed")}
+                  {t("Team Ranking")}
                 </Link>
               </div>
               {/* tabs endss */}
@@ -234,16 +235,29 @@ const task = () => {
 
         <AirdropCountdown />
         {/* RANKING GOES HERE */}
-        <div>
-          <h2 className="text-center fw-semibold fs-4">Holding Ranking</h2>
-          <div className="my-4 my-ranking">
-            <div className="d-flex align-items-center gap-1">
-              <GoDash size={28} />
+        <h2 className="text-center fw-semibold fs-4">Holding Ranking</h2>
+        <div className="d-flex box-border-bottom align-items-center gap-4 justify-content-center my-3">
+          <div className="card custom-user-card d-flex gap-4 flex-row align-items-center p-3 mb-3">
+            <div className="icon-container me-2">
+              <GoDash size={23} />
               <IoMdPerson size={28} />
-              <h2 className=" fw-semibold">jhonDoe@gmail.com</h2>
+              <span className="user-email text-white fw-bold">
+                check@check.com
+              </span>
+            </div>
+
+            <div className="d-flex align-items-center ms-auto">
+              <img
+                src={piImg}
+                alt="Avatar"
+                className="rounded-circle avater me-2"
+              />
+              <span className="amount text-white fw-bold">943.312</span>
             </div>
           </div>
         </div>
+
+        <RankingList />
 
         <Navbar />
       </div>

@@ -12,8 +12,9 @@ import "../assets/css/style8.css";
 import "../assets/css/style9.css";
 import "../assets/css/style10.css";
 import "../assets/css/style11.css";
+import "../styles/task.css";
 
-import taskcrypto_mining from "../assets/images/taskcrypto_mining.webp";
+import piImg from "../assets/images/piCoins/images/avater.jpg";
 
 // component
 import Navbar from "./partial/navbar";
@@ -32,6 +33,10 @@ import SupportLink from "./extra/supportLink";
 import LanguagePopUp from "./extra/LanguagePopUp";
 import TelegramPopUp from "./extra/TelegramPopUp";
 import image from "../assets/images/slider/miningSvg.webp";
+import AirdropCountdown from "./NewAddition/AirdropCountdown";
+import { GoDash } from "react-icons/go";
+import { IoMdPerson } from "react-icons/io";
+import TeamRanking from "./NewAddition/TeamRanking";
 
 const Task = () => {
   const { t } = useTranslation();
@@ -81,7 +86,7 @@ const Task = () => {
         ></Header>
         <div task-page="" className="mission-wrap">
           <div task-page="" className="mission-wrap-content">
-            <div data-v-7f399f52="" className="top-info">
+            {/* <div data-v-7f399f52="" className="top-info">
               <div data-v-7f399f52="" className="mission-chain-info">
                 <div data-v-7f399f52="" className="flex items-center">
                   <div data-v-7f399f52="">
@@ -149,11 +154,11 @@ const Task = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
             {/* top info ends */}
-            <div>
+            {/* <div>
               <img src={image} alt="svg image" className="w-100 h-auto" />
-            </div>
+            </div> */}
 
             <div
               data-v-7f399f52=""
@@ -168,13 +173,13 @@ const Task = () => {
                   className=":uno: tab-item h-full flex cursor-pointer items-center justify-center"
                   to="/task"
                 >
-                  {t("in_progress")}
+                  {t("Holding Ranking")}
                 </Link>
                 <Link
                   className=":uno: tab-item h-full flex cursor-pointer items-center justify-center active"
                   to="/task-completed"
                 >
-                  {t("completed")}
+                  {t("Team Ranking")}
                 </Link>
               </div>
               {/* tabs endss */}
@@ -282,6 +287,32 @@ const Task = () => {
                 </div>
               </div>
             </div>
+
+            {/* NEW DESIGN GOES HERE */}
+            <AirdropCountdown />
+            <h2 className="text-center fw-semibold fs-4">Holding Ranking</h2>
+            <div className="d-flex box-border-bottom align-items-center gap-4 justify-content-center my-3">
+              <div className="card custom-user-card d-flex gap-4 flex-row align-items-center p-3 mb-3">
+                <div className="icon-container me-2">
+                  <GoDash size={23} />
+                  <IoMdPerson size={28} />
+                  <span className="user-email text-white fw-bold">
+                    check@check.com
+                  </span>
+                </div>
+
+                <div className="d-flex align-items-center ms-auto">
+                  <img
+                    src={piImg}
+                    alt="Avatar"
+                    className="rounded-circle avater me-2"
+                  />
+                  <span className="amount text-white fw-bold">943.312</span>
+                </div>
+              </div>
+            </div>
+
+            <TeamRanking />
           </div>
         </div>
 

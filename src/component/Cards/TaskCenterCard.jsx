@@ -6,7 +6,7 @@ const TaskCenterCard = ({ reward }) => {
     <div className="reward-card card shadow-sm mb-4">
       <div className="card-body">
         <div className="d-flex justify-content-between align-items-center mb-2">
-          <h5 className="card-title mb-0">{reward.title}</h5>
+          <h5 className="card-title fs-5 mb-0">{reward.title}</h5>
           <span className="reward-amount">{reward.reward}</span>
         </div>
 
