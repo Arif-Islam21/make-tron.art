@@ -1,3 +1,95 @@
+.team-top-card {
+  background: linear-gradient(135deg, #0c6276, #027993);
+  color: white;
+}
+
+.commision-card {
+  background: linear-gradient(135deg, #0c6276, #027993);
+  color: white;
+}
+.commision-text {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+.commision-text-container {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  margin: 12px 0;
+  cursor: pointer;
+}
+.team-item-card {
+  background-color: white;
+  color: #0c6276;
+  border-radius: 14px;
+  padding: 16px 24px;
+}
+.invitation-copy {
+  max-width: fit-content;
+  padding: 8px 24px;
+  background-color: transparent;
+  border: 2px solid white;
+  border-radius: 14px;
+}
+.copy-btn {
+  background-color: white;
+  box-shadow: 2px, 2px, 2px, 8px #33333374;
+  color: black;
+  padding: 8px 24px;
+  font-weight: semibold;
+  border-radius: 14px;
+}
+.invite-link {
+  border: 2px solid white;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+}
+.share-icon {
+  border: 2px solid white;
+  border-radius: 50%;
+  padding: 8px;
+  background-color: rgba(128, 128, 128, 0.58);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* .level-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background-color: red;
+}
+.level-card-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+} */
+.team-level-container {
+  padding: 20px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #0c6276, #027993);
+  margin: 30px auto;
+  gap: 12px;
+  display: flex;
+  flex-direction: column;
+}
+.team-lvl-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  color: gray;
+  padding: 8px 16px;
+  font-weight: bold;
+  border-radius: 10px;
+}
+
+/* PREVIOUS */
 .card-body {
   position: relative;
   z-index: 1;

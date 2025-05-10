@@ -31,13 +31,16 @@ import CustomLoader from "./extra/customLoader";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Header from "./extra/Header";
-import SupportLink from "./extra/supportLink";
+import { RiArrowRightDoubleFill } from "react-icons/ri";
 import LanguagePopUp from "./extra/LanguagePopUp";
 import TelegramPopUp from "./extra/TelegramPopUp";
+import FollowUs from "./NewAddition/FollowUs";
+import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 
 const Team = () => {
   const { t } = useTranslation();
   const [data, setData] = useState({});
+  console.log(data);
   const [isLoading, setIsLoading] = useState(false); // State to control loader visibility
 
   useEffect(() => {
@@ -102,16 +105,14 @@ const Team = () => {
         ></Header>
         <div data-v-d7bc823e="" className="team-wrap">
           <div data-v-d7bc823e="" className="team-wrap-content">
-            <div className="card shadow-sm p-3 mb-4 rounded-3 border-0">
+            <div className="team-top-card shadow-sm p-3 mb-4 rounded-3 border-0">
               <div className="card-body">
-                <h6 className="card-title text-muted mb-2">
-                  {t("invitation_code")}
-                </h6>
+                <h6 className="card-title mb-2">{t("invitation_code")}</h6>
 
-                <div className="d-flex align-items-center justify-content-between bg-light p-2 rounded mb-3">
-                  <span className="text-monospace fw-semibold text-dark">
+                <div className="d-flex invitation-copy align-items-center justify-content-between p-2 rounded mb-3">
+                  {/* <span className="text-monospace fw-semibold text-dark">
                     {data?.user?.invitation_code || "000000"}
-                  </span>
+                  </span> */}
                   <CopyCode
                     code={data?.user?.invitation_code || "000000"}
                     copyText={t("copy")}
@@ -119,114 +120,113 @@ const Team = () => {
                   />
                 </div>
 
-                <p className="text-muted small mb-2">{t("share_refer_txt")}</p>
-
-                <div className="d-flex align-items-center justify-content-between bg-light p-2 rounded">
-                  <span className="text-truncate small">{invitationLink}</span>
+                <div className="d-flex align-items-center my-3 justify-content-between">
+                  <p className=" fs-5 mb-2">{t("share_refer_txt")}</p>
                   <CopyLink
                     code={invitationLink}
                     copyText={t("copy")}
                     handleCopyClick={handleCopyClick}
                   />
                 </div>
+
+                <div className="invite-link rounded">
+                  <span className="text-truncate small">{invitationLink}</span>
+                </div>
+
+                <FollowUs />
               </div>
             </div>
 
             {/* share-card ends */}
-            <div className="d-flex align-items-center my-2 mt-3 cursor-pointer text-dark">
-              <div className="d-flex align-items-center">
-                <i className="i-twemoji-spiral-calendar text-primary fs-4"></i>
-                <span className="ms-2 fw-semibold text-white">
-                  Selection period
-                </span>
-              </div>
-            </div>
 
             {/* date filter endsss */}
-            <div
-              className="container-card rounded-3 p-3 bg-light team-info position-relative"
-              style={{ background: "#ffffff30" }}
-            >
+            <div className="commision-card rounded-3 p-3 bg-light team-info position-relative">
+              <div className="commision-text-container">
+                <h2 className="commision-text">
+                  Commission Details <RiArrowRightDoubleFill />
+                </h2>
+              </div>
               {/* First set of team info */}
               <div className="row mb-3">
-                <div className="col-12 col-md-4 mb-3 mb-md-0">
-                  <div className="team-item">
-                    <div className="text-muted">{t("team_size")}</div>
-                    <div className="text-primary fs-5">
+                <div className="col-6 mb-3 mb-md-0">
+                  <div className="team-item-card">
+                    <div className="text-muted">
+                      {t("Total number of team")}
+                    </div>
+                    <div className="text-primary text-end fs-5">
                       {data?.teamsize || "0"}
                     </div>
                   </div>
                 </div>
-                <div className="col-12 col-md-4 mb-3 mb-md-0">
-                  <div className="team-item">
-                    <div className="text-muted">{t("team_recharge")}</div>
-                    <div className="text-primary fs-5">
+                <div className="col-6 mb-3 mb-md-0">
+                  <div className="team-item-card">
+                    <div className="text-muted">
+                      {t("Total promotion commission")}
+                    </div>
+                    <div className="text-primary text-end fs-5">
                       ${data?.totalDepositSum || "0"}
                     </div>
                   </div>
                 </div>
-                <div className="col-12 col-md-4 mb-3 mb-md-0">
-                  <div className="team-item">
+                {/* <div className="col-12 col-md-4 mb-3 mb-md-0">
+                  <div className="team-item-card">
                     <div className="text-muted">{t("team_withdrawal")}</div>
                     <div className="text-primary fs-5">
                       ${data?.totalWithdrawSum || "0"}
                     </div>
                   </div>
-                </div>
+                </div> */}
               </div>
 
               {/* Second set of team info */}
               <div className="row">
-                <div className="col-12 col-md-4 mb-3 mb-md-0">
-                  <div className="team-item">
-                    <div className="text-muted">{t("new_team")}</div>
-                    <div className="text-primary fs-5">
+                <div className="col-6 mb-3 mb-md-0">
+                  <div className="team-item-card">
+                    <div className="text-muted">{t("Total team recharge")}</div>
+                    <div className="text-primary text-end fs-5">
                       {data?.teamsizeToday || "0"}
                     </div>
                   </div>
                 </div>
-                <div className="col-12 col-md-4 mb-3 mb-md-0">
-                  <div className="team-item">
-                    <div className="text-muted">{t("first_time_recharge")}</div>
-                    <div className="text-primary fs-5">
+                <div className="col-6 mb-3 mb-md-0">
+                  <div className="team-item-card">
+                    <div className="text-muted">
+                      {t("Team total withdrawals")}
+                    </div>
+                    <div className="text-primary text-end fs-5">
                       {data.firstTimeRecharge || "0"}
                     </div>
                   </div>
                 </div>
-                <div className="col-12 col-md-4 mb-3 mb-md-0">
-                  <div className="team-item">
+                {/* <div className="col-12 col-md-4 mb-3 mb-md-0">
+                  <div className="team-item-card">
                     <div className="text-muted">{t("first_wthdrawal")}</div>
                     <div className="text-primary fs-5">
                       {data.firstTimeWithdraw || "0"}
                     </div>
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
 
             {/* team table ends */}
 
-            <div data-v-d7bc823e="" className="team-card">
-              <div data-v-d7bc823e="" className="team-item border-b p-4">
-                <div
-                  data-v-d7bc823e=""
-                  className="level-name flex items-center"
-                >
-                  <img
-                    data-v-d7bc823e=""
-                    src={level1Img}
-                    alt="Level 1"
-                    className="w-8 h-8 rounded-full mr-3"
-                  />
-                  <div
-                    data-v-d7bc823e=""
-                    className="level-num text-xl font-semibold text-gray-800"
-                  >
-                    LEV 1
-                  </div>
-                </div>
+            {/* team-card ends */}
+          </div>
+        </div>
 
-                <div
+        {/* <div data-v-d7bc823e="" className="">
+          <div data-v-d7bc823e="level-card" className="border-b p-4">
+            <div data-v-d7bc823e="" className=" flex items-center">
+              <div
+                data-v-d7bc823e=""
+                className=" text-xl font-semibold text-gray-800"
+              >
+                LEV 1
+              </div>
+            </div>
+
+            <div
                   data-v-d7bc823e=""
                   className="grid grid-cols-2 gap-5px mt-4"
                 >
@@ -264,159 +264,179 @@ const Team = () => {
                     </div>
                   </div>
                 </div>
-
-                <Link
-                  to={`/team-details?level=${1}`}
-                  data-v-d7bc823e=""
-                  className="btn text-blue-500 d-flex align-items-center font-medium hover:text-blue-700 mt-3 flex items-center"
-                >
-                  <span>{t("details")}</span>
-                  <i className="bi bi-arrow-right ms-2"></i>
-                </Link>
-              </div>
-
-              <div data-v-d7bc823e="" className="team-item border-b p-4">
-                <div
-                  data-v-d7bc823e=""
-                  className="level-name flex items-center"
-                >
-                  <img
-                    data-v-d7bc823e=""
-                    src={level2Img}
-                    alt="Level 2"
-                    className="w-8 h-8 rounded-full mr-3"
-                  />
-                  <div
-                    data-v-d7bc823e=""
-                    className="level-num text-xl font-semibold text-gray-800"
-                  >
-                    LEV 2
-                  </div>
-                </div>
-
-                <div
-                  data-v-d7bc823e=""
-                  className="grid grid-cols-2 gap-5px mt-4"
-                >
-                  <div data-v-d7bc823e="" className="level-count">
-                    <div data-v-d7bc823e="" className="text-xs text-gray-500">
-                      {t("register_valid")}
-                    </div>
-                    <div
-                      data-v-d7bc823e=""
-                      className="text-df font-medium text-gray-700"
-                    >
-                      {data?.refer_lvel2 || 0}/{data?.refer_val2 || 0}
-                    </div>
-                  </div>
-                  <div data-v-d7bc823e="" className="level-count">
-                    <div data-v-d7bc823e="" className="text-xs text-gray-500">
-                      {t("commission_percentage")}
-                    </div>
-                    <div
-                      data-v-d7bc823e=""
-                      className="text-df font-medium text-gray-700"
-                    >
-                      {data?.commission?.refer_com2 || "0"}%
-                    </div>
-                  </div>
-                  <div data-v-d7bc823e="" className="level-count">
-                    <div data-v-d7bc823e="" className="text-xs text-gray-500">
-                      {t("total_income")}
-                    </div>
-                    <div
-                      data-v-d7bc823e=""
-                      className="text-df font-medium text-gray-700"
-                    >
-                      {parseFloat(data?.sumcom_lvel2).toFixed(2) || 0}
-                    </div>
-                  </div>
-                </div>
-
-                <Link
-                  to={`/team-details?level=${2}`}
-                  data-v-d7bc823e=""
-                  className="btn text-blue-500 font-medium d-flex align-items-center hover:text-blue-700 mt-3 flex items-center"
-                >
-                  <span>{t("details")}</span>
-                  <i className="bi bi-arrow-right ms-2"></i>
-                </Link>
-              </div>
-
-              {/* Level 3 Item */}
-              <div data-v-d7bc823e="" className="team-item border-b p-4">
-                <div
-                  data-v-d7bc823e=""
-                  className="level-name flex items-center"
-                >
-                  <img
-                    data-v-d7bc823e=""
-                    src={level3Img}
-                    alt="Level 3"
-                    className="w-8 h-8 rounded-full mr-3"
-                  />
-                  <div
-                    data-v-d7bc823e=""
-                    className="level-num text-xl font-semibold text-gray-800"
-                  >
-                    LEV 3
-                  </div>
-                </div>
-
-                <div
-                  data-v-d7bc823e=""
-                  className="grid grid-cols-2 gap-5px mt-4"
-                >
-                  <div data-v-d7bc823e="" className="level-count">
-                    <div data-v-d7bc823e="" className="text-xs text-gray-500">
-                      {t("register_valid")}
-                    </div>
-                    <div
-                      data-v-d7bc823e=""
-                      className="text-df font-medium text-gray-700"
-                    >
-                      {data?.refer_lvel3 || 0}/{data?.refer_val3 || 0}
-                    </div>
-                  </div>
-                  <div data-v-d7bc823e="" className="level-count">
-                    <div data-v-d7bc823e="" className="text-xs text-gray-500">
-                      {t("commission_percentage")}
-                    </div>
-                    <div
-                      data-v-d7bc823e=""
-                      className="text-df font-medium text-gray-700"
-                    >
-                      {data?.commission?.refer_com3 || "0"}%
-                    </div>
-                  </div>
-                  <div data-v-d7bc823e="" className="level-count">
-                    <div data-v-d7bc823e="" className="text-xs text-gray-500">
-                      {t("total_income")}
-                    </div>
-                    <div
-                      data-v-d7bc823e=""
-                      className="text-df font-medium text-gray-700"
-                    >
-                      {parseFloat(data?.sumcom_lvel3).toFixed(2) || 0}
-                    </div>
-                  </div>
-                </div>
-
-                <Link
-                  to={`/team-details?level=${3}`}
-                  data-v-d7bc823e=""
-                  className="btn text-blue-500 font-medium d-flex align-items-center hover:text-blue-700 mt-3 flex items-center"
-                >
-                  <span>{t("details")}</span>
-                  <i className="bi bi-arrow-right ms-2"></i>
-                </Link>
-              </div>
-
-              {/* card item ends */}
+            <div>
+              <h2>Valid number/Number of people</h2>
+              <h3>0/0</h3>
             </div>
-            {/* team-card ends */}
+
+            <Link
+              to={`/team-details?level=${1}`}
+              data-v-d7bc823e=""
+              className="btn text-blue-500 d-flex align-items-center font-medium hover:text-blue-700 mt-3 flex items-center"
+            >
+              <span>{t("details")}</span>
+              <i className="bi bi-arrow-right ms-2"></i>
+            </Link>
+          </div>
+
+          <div data-v-d7bc823e="" className="team-item border-b p-4">
+            <div data-v-d7bc823e="" className="level-name flex items-center">
+              <img
+                data-v-d7bc823e=""
+                src={level2Img}
+                alt="Level 2"
+                className="w-8 h-8 rounded-full mr-3"
+              />
+              <div
+                data-v-d7bc823e=""
+                className="level-num text-xl font-semibold text-gray-800"
+              >
+                LEV 2
+              </div>
+            </div>
+
+            <div data-v-d7bc823e="" className="grid grid-cols-2 gap-5px mt-4">
+              <div data-v-d7bc823e="" className="level-count">
+                <div data-v-d7bc823e="" className="text-xs text-gray-500">
+                  {t("register_valid")}
+                </div>
+                <div
+                  data-v-d7bc823e=""
+                  className="text-df font-medium text-gray-700"
+                >
+                  {data?.refer_lvel2 || 0}/{data?.refer_val2 || 0}
+                </div>
+              </div>
+              <div data-v-d7bc823e="" className="level-count">
+                <div data-v-d7bc823e="" className="text-xs text-gray-500">
+                  {t("commission_percentage")}
+                </div>
+                <div
+                  data-v-d7bc823e=""
+                  className="text-df font-medium text-gray-700"
+                >
+                  {data?.commission?.refer_com2 || "0"}%
+                </div>
+              </div>
+              <div data-v-d7bc823e="" className="level-count">
+                <div data-v-d7bc823e="" className="text-xs text-gray-500">
+                  {t("total_income")}
+                </div>
+                <div
+                  data-v-d7bc823e=""
+                  className="text-df font-medium text-gray-700"
+                >
+                  {parseFloat(data?.sumcom_lvel2).toFixed(2) || 0}
+                </div>
+              </div>
+            </div>
+
+            <Link
+              to={`/team-details?level=${2}`}
+              data-v-d7bc823e=""
+              className="btn text-blue-500 font-medium d-flex align-items-center hover:text-blue-700 mt-3 flex items-center"
+            >
+              <span>{t("details")}</span>
+              <i className="bi bi-arrow-right ms-2"></i>
+            </Link>
+          </div>
+
+          <div data-v-d7bc823e="" className="team-item border-b p-4">
+            <div data-v-d7bc823e="" className="level-name flex items-center">
+              <img
+                data-v-d7bc823e=""
+                src={level3Img}
+                alt="Level 3"
+                className="w-8 h-8 rounded-full mr-3"
+              />
+              <div
+                data-v-d7bc823e=""
+                className="level-num text-xl font-semibold text-gray-800"
+              >
+                LEV 3
+              </div>
+            </div>
+
+            <div data-v-d7bc823e="" className="grid grid-cols-2 gap-5px mt-4">
+              <div data-v-d7bc823e="" className="level-count">
+                <div data-v-d7bc823e="" className="text-xs text-gray-500">
+                  {t("register_valid")}
+                </div>
+                <div
+                  data-v-d7bc823e=""
+                  className="text-df font-medium text-gray-700"
+                >
+                  {data?.refer_lvel3 || 0}/{data?.refer_val3 || 0}
+                </div>
+              </div>
+              <div data-v-d7bc823e="" className="level-count">
+                <div data-v-d7bc823e="" className="text-xs text-gray-500">
+                  {t("commission_percentage")}
+                </div>
+                <div
+                  data-v-d7bc823e=""
+                  className="text-df font-medium text-gray-700"
+                >
+                  {data?.commission?.refer_com3 || "0"}%
+                </div>
+              </div>
+              <div data-v-d7bc823e="" className="level-count">
+                <div data-v-d7bc823e="" className="text-xs text-gray-500">
+                  {t("total_income")}
+                </div>
+                <div
+                  data-v-d7bc823e=""
+                  className="text-df font-medium text-gray-700"
+                >
+                  {parseFloat(data?.sumcom_lvel3).toFixed(2) || 0}
+                </div>
+              </div>
+            </div>
+
+            <Link
+              to={`/team-details?level=${3}`}
+              data-v-d7bc823e=""
+              className="btn text-blue-500 font-medium d-flex align-items-center hover:text-blue-700 mt-3 flex items-center"
+            >
+              <span>{t("details")}</span>
+              <i className="bi bi-arrow-right ms-2"></i>
+            </Link>
+          </div>
+        </div> */}
+
+        <div className="team-level-container">
+          <div className="team-lvl-card">
+            <h1>LEV 1</h1>
+            <div className="d-flex align-items-center gap-1">
+              <h5>Valid number/Number of people</h5>
+              <h3>0/0</h3>
+              <Link to={`/team-details?level=${1}`}>
+                <MdOutlineKeyboardArrowRight size={30} />
+              </Link>
+            </div>
+          </div>
+          <div className="team-lvl-card">
+            <h1>LEV 2</h1>
+            <div className="d-flex align-items-center gap-1">
+              <h5>Valid number/Number of people</h5>
+              <h3>0/0</h3>
+              <Link to={`/team-details?level=${2}`}>
+                <MdOutlineKeyboardArrowRight size={30} />
+              </Link>
+            </div>
+          </div>
+          <div className="team-lvl-card">
+            <h1>LEV 1</h1>
+            <div className="d-flex align-items-center gap-1">
+              <h5>Valid number/Number of people</h5>
+              <h3>0/0</h3>
+              <Link to={`/team-details?level=${3}`}>
+                <MdOutlineKeyboardArrowRight size={30} />
+              </Link>
+            </div>
           </div>
         </div>
+
         {isCopied && (
           <div
             id="copyModal"

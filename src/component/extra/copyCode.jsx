@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 // css import
 import "../../assets/css/style.css";
+import "../../styles/team.css";
 
 const InviteCode = ({ code, copyText, handleCopyClick }) => {
   const inviteCode = code;
@@ -30,7 +31,7 @@ const InviteCode = ({ code, copyText, handleCopyClick }) => {
       <span team-page="" className="font-anton text-24px font-bold">
         {inviteCode}
       </span>
-      <div team-page="" className="btn ml-10px" onClick={copyToClipboard}>
+      <div team-page="" className="copy-btn ml-10px" onClick={copyToClipboard}>
         {copyText}
       </div>
     </div>
