@@ -30,8 +30,13 @@ import TelegramPopUp from "./extra/TelegramPopUp";
 import tik from "../assets/images/slider/tikmark.png";
 import { Container, Row, Col, Card } from "react-bootstrap";
 import CountUp from "react-countup";
+import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
+import "react-tabs/style/react-tabs.css";
 
 import { FaUserGear } from "react-icons/fa6";
+import { IoIosArrowForward } from "react-icons/io";
+import VipTabNewAddition from "./NewAddition/VipTabNewAddition";
+import VipUpgrade from "./Cards/VipUpgrade";
 
 const vip = () => {
   const { t } = useTranslation();
@@ -269,6 +274,32 @@ const vip = () => {
               </div>
             </div>
           </div>
+        </div>
+
+        <div className="my-3">
+          <Tabs>
+            <TabList className="tab-header">
+              <Tab className="vip-tab">Mining Tools</Tab>
+              <Tab className="vip-tab">Upgrade</Tab>
+            </TabList>
+
+            <TabPanel>
+              <div className="d-flex align-items-center justify-content-end">
+                <h3 className="d-flex align-items-center gap-1 fs-6">
+                  Purchase History <IoIosArrowForward />
+                </h3>
+              </div>
+              <VipTabNewAddition />
+            </TabPanel>
+            <TabPanel>
+              <div className="d-flex align-items-center justify-content-end">
+                <h3 className="d-flex align-items-center gap-1 fs-6">
+                  Purchase History <IoIosArrowForward />
+                </h3>
+              </div>
+              <VipUpgrade />
+            </TabPanel>
+          </Tabs>
         </div>
 
         <CustomLoader />
