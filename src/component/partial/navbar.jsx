@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import { useEffect } from "react";
 import "../../styles/bottomNavbar.css";
 import axios from "axios"; // Optional, if using Axios
+import { IoPodium } from "react-icons/io5";
 
 const Navbar = () => {
   const { t } = useTranslation();
@@ -95,8 +96,18 @@ const Navbar = () => {
         <NavLink to="/task" className="tab-link">
           {({ isActive }) => (
             <div className={`tab-item ${isActive ? "active" : ""}`}>
-              <i className="bi bi-cpu tab-icon"></i>
+              <p className=" tab-icon">
+                <IoPodium />
+              </p>
               <div className="tab-label">{t("Leaderboard")}</div>
+            </div>
+          )}
+        </NavLink>
+        <NavLink to="/vip" className="tab-link">
+          {({ isActive }) => (
+            <div className={`tab-item ${isActive ? "active" : ""}`}>
+              <i className="bi bi-rocket  tab-icon"></i>
+              <div className="tab-label">{t("Upgrade")}</div>
             </div>
           )}
         </NavLink>
@@ -108,14 +119,7 @@ const Navbar = () => {
             </div>
           )}
         </NavLink>
-        <NavLink to="/vip" className="tab-link">
-          {({ isActive }) => (
-            <div className={`tab-item ${isActive ? "active" : ""}`}>
-              <i className="bi bi-stars  tab-icon"></i>
-              <div className="tab-label">{t("vip")}</div>
-            </div>
-          )}
-        </NavLink>
+
         <NavLink to="/me" className="tab-link">
           {({ isActive }) => (
             <div className={`tab-item ${isActive ? "active" : ""}`}>

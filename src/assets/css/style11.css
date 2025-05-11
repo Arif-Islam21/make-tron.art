@@ -50092,14 +50092,14 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: var(--text-white);
+  background: transparent;
   color: var(--text-black);
   border-radius: var(--card-radius);
   box-shadow: var(--box-shadow);
 }
 
 .mine-wrap-content .top-info .user-number-item[data-v-f004e884] {
-  width: 50%;
+  /* width: 50%; */
   text-align: center;
 }
 

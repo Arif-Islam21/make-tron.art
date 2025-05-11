@@ -144,52 +144,53 @@ const HomePage = () => {
         <div data-v-f004e884="" className="mine-wrap">
           <div data-v-f004e884="" className="mine-wrap-content">
             <div data-v-f004e884="" className="top-info">
-              <div
-                data-v-f004e884=""
-                className=":uno: base-logo flex items-center avatar"
-              >
-                <img
-                  className="site-img h-full w-full rd-50%"
-                  src={logo}
-                  draggable="false"
-                  alt="logo"
-                />
-              </div>
-              <div
-                data-v-f004e884=""
-                className="user-info d-flex flex-column gap-2"
-              >
-                <div data-v-f004e884="">
-                  {formatEmailOrPhone(
-                    data?.user?.email == null
-                      ? data?.user?.phone
-                      : data?.user?.email
-                  )}
-                </div>
+              <div className="user-info-top">
+                <h2 className="fs-4 fw-semibold p-4">CH</h2>
                 <div
                   data-v-f004e884=""
-                  className="shadow px-4 bg-secondary text-light py-1 rounded"
+                  className="user-info d-flex flex-column gap-2"
                 >
-                  VIP{data?.user?.my_vip}
+                  <div data-v-f004e884="">
+                    {formatEmailOrPhone(
+                      data?.user?.email == null
+                        ? data?.user?.phone
+                        : data?.user?.email
+                    )}
+                  </div>
+                  <div
+                    data-v-f004e884=""
+                    className="shadow px-4 bg-white text-black fw-bold text-light py-1 rounded"
+                  >
+                    Pi Level {data?.user?.my_vip}
+                  </div>
                 </div>
               </div>
-              <div data-v-f004e884="" className="user-number">
-                <div data-v-f004e884="" className="user-number-item">
-                  <div data-v-f004e884="" className="title">
-                    {t("total_balance")} (USDT)
+              <div
+                data-v-f004e884=""
+                className="user-number d-flex flex-column"
+              >
+                <div
+                  data-v-f004e884=""
+                  className="user-number-item user-balance"
+                >
+                  <div data-v-f004e884="" className="title fs-6 fw-bold">
+                    {t("Total Pi")} (USDT)
                   </div>
-                  <div data-v-f004e884="" className="number">
+                  <div data-v-f004e884="" className="number fs-4 fw-bold">
                     {(
                       parseFloat(data?.withdraw_balance) +
                       parseFloat(data?.amount)
                     ).toFixed(2)}
                   </div>
                 </div>
-                <div data-v-f004e884="" className="user-number-item">
-                  <div data-v-f004e884="" className="title">
-                    {t("recharge_amount")} (USDT)
+                <div
+                  data-v-f004e884=""
+                  className="user-number-item user-balance"
+                >
+                  <div data-v-f004e884="" className="title fs-6 fw-bold">
+                    {t("Brokerage Wallet")} (USDT)
                   </div>
-                  <div data-v-f004e884="" className="number">
+                  <div data-v-f004e884="" className="number fs-4 fw-bold">
                     {parseFloat(data?.amount).toFixed(2)}
                   </div>
                 </div>
