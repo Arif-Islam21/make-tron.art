@@ -11,6 +11,7 @@ import "../assets/css/style8.css";
 import "../assets/css/style9.css";
 import "../assets/css/style10.css";
 import "../assets/css/style11.css";
+import "../styles/vip.css";
 
 import crown from "../assets/images/crown.png";
 import { useEffect, useState } from "react";
@@ -29,12 +30,13 @@ import TelegramPopUp from "./extra/TelegramPopUp";
 import tik from "../assets/images/slider/tikmark.png";
 import { Container, Row, Col, Card } from "react-bootstrap";
 import CountUp from "react-countup";
-import "../styles/vip.css";
+
+import { FaUserGear } from "react-icons/fa6";
 
 const vip = () => {
   const { t } = useTranslation();
   const [data, setData] = useState({});
-  // const data = true;
+  console.log(data);
   const navigate = useNavigate();
   const formatDate = (dateString) => {
     const date = new Date(dateString);
@@ -129,6 +131,7 @@ const vip = () => {
           selectedLanguage={selectedLanguage}
           toggleLangPopup={toggleLangPopup}
         ></Header>
+        {/* NO CHANGES HERE */}
         <div data-v-819be10a="" className="vip-info-wrap">
           <div data-v-819be10a="" className="vip-log">
             {t("upgrade_log")}
@@ -153,9 +156,10 @@ const vip = () => {
             <button onClick={handleConfirm}>Confirm</button>
           </div>
         </div>
+        {/* NO CHANGES HERE */}
 
         {/* SOME DESIGN GOES HERE */}
-        <Container fluid className="py-5 investment-section">
+        {/* <Container fluid className="py-5 investment-section">
           <h2 className="text-center text-light mb-4 glow-text">
             💠 Investment Levels 💠
           </h2>
@@ -237,7 +241,35 @@ const vip = () => {
               </p>
             </Card.Body>
           </Card>
-        </Container>
+        </Container> */}
+
+        <div className="vip-user-container">
+          <div className="vip-user-profile">
+            <h2 className="fs-5 fw-bold">CH</h2>
+            <div className="d-flex flex-column gap-2">
+              <h3 className="fs-6 fw-bold">check****.com</h3>
+              <h2 className="fs-6 fw-bold">PI Level: 0</h2>
+              <h3 className="fs-6 fw-bold">Inviter: asaes***********</h3>
+            </div>
+            <Link to="/change-password">
+              <FaUserGear size={26} />
+            </Link>
+          </div>
+          <div className="row my-3">
+            <div className="col-6 mb-3 mb-md-0">
+              <div className="team-item-card">
+                <div className="text-muted">{t("Working Hours")}</div>
+                <div className="text-primary text-end fs-5">24H</div>
+              </div>
+            </div>
+            <div className="col-6 mb-3 mb-md-0">
+              <div className="team-item-card">
+                <div className="text-muted">{t("Mining Speed")}</div>
+                <div className="text-primary text-end fs-5">3.888 Pi/H</div>
+              </div>
+            </div>
+          </div>
+        </div>
 
         <CustomLoader />
         <Navbar />
