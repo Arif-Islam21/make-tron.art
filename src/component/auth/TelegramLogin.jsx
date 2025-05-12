@@ -24,7 +24,7 @@ import CustomLoader from "../extra/customLoader";
 import Loader from "../extra/loader";
 import { Form } from "react-bootstrap";
 
-function App() {
+const TelegramLogin = () => {
   const [phone, setPhone] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState({ phone: "", password: "" });
@@ -153,14 +153,14 @@ function App() {
                   {t("Email")}
                 </Link>
                 <Link
-                  className=":uno: tab-item h-full flex cursor-pointer items-center justify-center active"
+                  className=":uno: tab-item h-full flex cursor-pointer items-center justify-center "
                   to="/phone-login"
                 >
                   {t("Mobile")}
                 </Link>
                 <Link
                   to="/telegram-login"
-                  className=":uno: tab-item h-full flex cursor-pointer items-center justify-center"
+                  className=":uno: tab-item h-full flex cursor-pointer items-center justify-center active"
                 >
                   {t("Telegram")}
                 </Link>
@@ -169,23 +169,11 @@ function App() {
                 <div className="base-input is-text">
                   {/* <div className="label">{t("phone")}</div> */}
                   <div className="input-box">
-                    <div className="input-left-slot">
-                      <div className="flex items-center">
-                        <div login-content="" className="ml-0!">
-                          <div login-content="" onClick={toggleCountryPopUp}>
-                            <span className="input-phone-select">
-                              +<span id="countryCode">{selectedCountry}</span>
-                            </span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
                     <input
                       type={eyeOutline ? "password" : "text"}
                       className="w-full"
                       id="phone"
-                      placeholder={t("Mobile Phone Number")}
+                      placeholder={t("Telegram ID")}
                       value={phone}
                       onChange={(e) => setPhone(e.target.value)}
                     />
@@ -236,7 +224,7 @@ function App() {
                 </div>
                 <div className=":uno: base-main-btn flex items-center justify-center">
                   <button type="submit" className="base-main-btn-content mx-0">
-                    <div>{t("sign_in")}</div>
+                    <div>{t("Login")}</div>
                   </button>
                 </div>
                 <div className="mt-20px text-center">
@@ -246,7 +234,7 @@ function App() {
                   >
                     {" "}
                     <h3>No Account?</h3>
-                    {t("sign_up")}
+                    {t("Register")}
                   </Link>
                 </div>
               </div>
@@ -272,6 +260,6 @@ function App() {
       ></CountryCodePup>
     </div>
   );
-}
+};
 
-export default App;
+export default TelegramLogin;

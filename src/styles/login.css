@@ -21,3 +21,29 @@
   color: #6c757d !important;
   opacity: 1 !important;
 }
+
+/* new */
+.top-img-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 8px;
+  justify-content: center;
+  margin: 12px auto;
+}
+
+.top-img {
+  border-radius: 50%;
+  height: 70px;
+
+  width: 70px;
+}
+.remember-me {
+  padding: 4px 8px;
+  margin-left: 25px;
+  margin-top: 14px;
+}
+.text-gray {
+  color: gray;
+  font-weight: bold;
+}

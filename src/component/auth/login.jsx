@@ -17,12 +17,13 @@ import { useSnackbar } from "notistack";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
-import AuthTop from "../extra/authTopPart";
+import piLogo from "../../assets/images/piCoins/icons/piCoins.png";
 import LanguagePopUp from "../extra/LanguagePopUp";
 import TelegramPopUp from "../extra/TelegramPopUp";
 
 import CustomLoader from "../extra/customLoader";
 import Loader from "../extra/loader";
+import { Form } from "react-bootstrap";
 
 function App() {
   const [email, setEmail] = useState("");
@@ -124,6 +125,10 @@ function App() {
           {/* <!-- top-info ends --> */}
           {/* Conditional rendering of the loader */}
           <div className="login-content">
+            <div className="top-img-container">
+              <img src={piLogo} alt="pi image" className="top-img" />
+              <h2 className="fs-5 fw-semibold">Pi Coin</h2>
+            </div>
             <form
               className="login_Fm"
               onSubmit={handleSubmit}
@@ -132,22 +137,27 @@ function App() {
                   "slide-in-right .3s cubic-bezier(.25,.46,.45,.94) both",
               }}
             >
+              <div className="base-user-tab flex items-center justify-center">
+                <Link
+                  className=":uno: tab-item h-full flex cursor-pointer items-center justify-center active"
+                  to="/"
+                >
+                  {t("Email")}
+                </Link>
+                <Link
+                  className=":uno: tab-item h-full flex cursor-pointer items-center justify-center"
+                  to="/phone-login"
+                >
+                  {t("Phone")}
+                </Link>
+                <Link
+                  to="/telegram-login"
+                  className=":uno: tab-item h-full flex cursor-pointer items-center justify-center"
+                >
+                  {t("Telegram")}
+                </Link>
+              </div>
               <div className=":uno: container-form w-full bg-half-black rd-$radius">
-                {/* <div className=":uno: base-user-tab flex items-center justify-center">
-                  <Link
-                    className=":uno: tab-item h-full flex cursor-pointer items-center justify-center active"
-                    to="/"
-                  >
-                    {t("email_login")}
-                  </Link>
-                  <Link
-                    className=":uno: tab-item h-full flex cursor-pointer items-center justify-center"
-                    to="/phone-login"
-                  >
-                    {t("phone_login")}
-                  </Link>
-                </div> */}
-                <h2 className="fs-4 fw-semibold">Login</h2>
                 <div className="base-input is-text">
                   {/* <div className="label">{t("email")}</div> */}
                   <div className="input-box">
@@ -174,7 +184,7 @@ function App() {
                       type={eyeOutline ? "password" : "text"}
                       className="w-full"
                       id="password"
-                      placeholder={t("password")}
+                      placeholder={t("Login Password")}
                       value={password}
                       onChange={(e) => setPassword(e.target.value)}
                     />
@@ -198,6 +208,13 @@ function App() {
                     <small className="text-danger">{errors.password}</small>
                   )}
                 </div>
+                <div>
+                  <Form.Check
+                    type="checkbox"
+                    label={`Remember Me`}
+                    className="remember-me"
+                  />
+                </div>
 
                 {/* LOGIN SIGNUP BUTTONS */}
                 <div className="tools mt-4">
@@ -208,19 +225,18 @@ function App() {
                       type="submit"
                       className="base-main-btn-content mx-0"
                     >
-                      <div>{t("sign_in")}</div>
+                      <div className="fw-bolder">{t("Log In")}</div>
                     </Button>
                   </div>
 
-                  <div
-                    className="mt-4 text-center"
-                    style={{ marginBottom: "20px" }}
-                  >
+                  <div className="mt-4 text-center text-gray d-flex align-items-center gap-2 justify-content-center">
+                    {" "}
+                    No Account?
                     <Link
                       to="/register"
-                      className="register cursor-pointer text-link d-block"
+                      className="register cursor-pointer d-block"
                     >
-                      {t("sign_up")}
+                      {t("Register")}
                     </Link>
                   </div>
                 </div>
