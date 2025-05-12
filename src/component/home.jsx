@@ -110,7 +110,7 @@ const home = () => {
         <div className="index-wrap">
           {/* <HomeNotice></HomeNotice> */}
           <HomeTimer />
-          <HomeLinks></HomeLinks>
+          {/* <HomeLinks></HomeLinks> */}
           <PiMining />
           <TaskCenter />
 

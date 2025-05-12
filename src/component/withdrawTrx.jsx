@@ -24,7 +24,8 @@ import axios from "axios";
 import SingleHeader from "./extra/SingleHeader";
 import SupportLink from "./extra/supportLink";
 import TelegramPopUp from "./extra/TelegramPopUp";
-import { Button, Form } from "react-bootstrap";
+import { Button, Form, InputGroup } from "react-bootstrap";
+import { IoWarning } from "react-icons/io5";
 
 const withdraw = () => {
   const navigate = useNavigate();
@@ -123,15 +124,27 @@ const withdraw = () => {
     <div id="app" className="a-t-1 no-4">
       <div className="box-border min-h-full w-full pt-45px">
         <SingleHeader></SingleHeader>
+        <h2 className="fs-4 fw-bold text-center my-3 px-4">Withdraw</h2>
+        <div data-v-0bc71186="" className="number balance-card">
+          <div className="title text-white fs-4">
+            {t("Currently available assets (TRX)")}
+          </div>
+          <div className="num fs-5">
+            {data?.user?.withdraw_balance && data?.settingtrx?.conversion
+              ? (
+                  data.user.withdraw_balance / data.settingtrx.conversion
+                ).toFixed(2)
+              : 0}
+          </div>
+        </div>
         <div className="withdraw-wrap25 p-$mg">
-          <h2 className="fs-4 fw-bold my-3 px-4">Withdraw</h2>
           <div
             className=":uno: container-card relative rd-$card-radius p-$mg c-$btn-text"
-            style={{ background: "#fff", color: "#000" }}
+            style={{ backgroundColor: "#383847", color: "#fff" }}
           >
-            <div className="d-flex align-items-center justify-content-end">
+            {/* <div className="d-flex align-items-center justify-content-end">
               <button className="btn btn-primary">Show Records</button>
-            </div>
+            </div> */}
 
             {alertVisible && (
               <div
@@ -144,30 +157,25 @@ const withdraw = () => {
               </div>
             )}
             {isLoading ? <CustomLoader isLoading={isLoading} /> : null}
-            <div
-              data-v-0bc71186=""
-              className="number"
-              style={{
-                background: "#7A034F",
-              }}
-            >
-              <div className="title text-white ">
-                {t("Currently available assets (TRX)")}
-              </div>
-              <div className="num">
-                {data?.user?.withdraw_balance && data?.settingtrx?.conversion
-                  ? (
-                      data.user.withdraw_balance / data.settingtrx.conversion
-                    ).toFixed(2)
-                  : 0}
-              </div>
-            </div>
 
             <div className="my-3">
-              <h3 className="fs-5 fw-semibold">withdrawal token</h3>
-              <Link to="/withdraw-trx" id="trc20Usdt" className="trx-btn my-2">
-                TRX
-              </Link>
+              <h3 className="fs-5 fw-semibold my-2">Select Mainnet</h3>
+              <div className="d-flex align-items-center gap-2">
+                <Link
+                  to="/withdraw-trx"
+                  id="trc20Usdt"
+                  className="trx-btn my-2"
+                >
+                  TRX
+                </Link>
+                <Link
+                  to="/withdraw-trx"
+                  id="trc20Usdt"
+                  className="trx-btn my-2"
+                >
+                  TRX
+                </Link>
+              </div>
             </div>
             {/* Withdrawal method ends */}
             <form onSubmit={handleSubmit} action="#">
@@ -175,10 +183,12 @@ const withdraw = () => {
                 className="mb-3"
                 controlId="exampleForm.ControlInput1"
               >
-                <Form.Label className="fs-5">Withdrawal address</Form.Label>
+                <Form.Label className="fs-5 fw-bold">
+                  Withdrawal address
+                </Form.Label>
                 <Form.Control
                   type="text"
-                  placeholder="Please enter the TRX wallet address"
+                  placeholder="Please enter or Long press to enter the withdrawal address"
                   className="w-full"
                   name="address"
                   value={address}
@@ -190,39 +200,42 @@ const withdraw = () => {
                 className="mb-3"
                 controlId="exampleForm.ControlInput1"
               >
-                <Form.Label className="fs-5">
-                  Insert Your Desired Trx Amount To Withdraw:
+                <Form.Label className="fs-5 fw-bold">
+                  Withdrawal amount
                 </Form.Label>
-                <Form.Control
-                  placeholder="Please enter the transfer ammount"
-                  type="number"
-                  step="0.01"
-                  className="w-full"
-                  name="quota"
-                  value={quota}
-                  onChange={handleQuotaChange}
-                  autocomplete="number"
-                />
+                <InputGroup className="w-full">
+                  <Form.Control
+                    placeholder="Please enter the transfer amount"
+                    type="number"
+                    step="0.01"
+                    name="quota"
+                    value={quota}
+                    onChange={handleQuotaChange}
+                    autoComplete="off" // fixed typo: `autocomplete` to `autoComplete` and "number" is not valid here
+                  />
+                  {/* <Button variant=" all-btn">All</Button> */}
+                  <button className="all-btn" type="button">
+                    All
+                  </button>
+                </InputGroup>
               </Form.Group>
 
-              <div className="d-flex align-items-center justify-content-between my-1">
+              <div className="d-flex align-items-center gap-3 my-1">
                 <h3>minimum withdrawal amount:</h3>
-                <h4>5</h4>
+                <h4 className="fs-6 fw-semibold">5000USDT</h4>
               </div>
-              <div className="d-flex align-items-center justify-content-between my-1">
+              <div className="d-flex align-items-center gap-3 my-1">
                 <h3>maximum withdrawal amount:</h3>
-                <h4>999999</h4>
+                <h4 className="fs-6 fw-semibold">999999</h4>
               </div>
 
               <div className="base-input is-password">
-                <Form.Label className="fs-5">
-                  Withdrawal Security Code
-                </Form.Label>
+                <Form.Label className="fs-5">Security password</Form.Label>
                 <div className="input-box">
                   <div className="input-left-slot"></div>
                   <input
                     type={hideShowPass ? "text" : "password"}
-                    placeholder={t("Security Code")}
+                    placeholder={t("Security password")}
                     className="w-full withdraw_password"
                     name="password"
                     value={password}
@@ -248,20 +261,24 @@ const withdraw = () => {
               {/* base-input ends */}
               <div>
                 <div className="mt-10px flex items-center justify-between">
-                  <span className="text-sm text-$text-gray">{t("Fee")}:</span>
+                  <span className="text-sm ">{t("Fee")}:</span>
                   <div className="text-right text-sm">
-                    <del className="">0 TRX</del>
+                    <p className="">0 TRX</p>
                   </div>
                 </div>
                 <div className="mt-10px flex items-center justify-between">
-                  <span className="text-sm text-$text-gray">{t("Taxes")}:</span>
+                  <span className="text-sm ">{t("Taxes")}:</span>
                   <div className="text-sm">{actuallyReceived} TRX</div>
                 </div>
-                <div className="d-flex align-items-center justify-content-center">
+                <div className="mt-10px flex items-center justify-between">
+                  <span className="text-sm ">{t("Actual arrival：")}:</span>
+                  <div className="text-sm">{actuallyReceived} TRX</div>
+                </div>
+                <div className="w-100">
                   <Button
+                    size="lg"
                     type="submit"
-                    className="btn btn-primary my-3 d-flex align-items-center justify-content-center w-75"
-                    style={{ maxWidth: "300px" }}
+                    className="w-100 my-3"
                     disabled={isLoading}
                   >
                     <div>
@@ -272,6 +289,33 @@ const withdraw = () => {
               </div>
             </form>
           </div>
+        </div>
+
+        <div className="mx-5 pb-4 mt-2">
+          <h2 className="d-flex align-items-center justify-content-start gap-2 fs-5">
+            <IoWarning /> <p>Warm reminder</p>
+          </h2>
+          <p className="my-2 fs-6">
+            1. In order to maintain the stable operation of the platform,
+            different taxes will be charged for each withdrawal according to the
+            withdrawal amount. Withdrawal taxes are as follows!
+          </p>
+          <p className="my-4 fs-6">2-99 USDT is subject to 7% tax</p>
+          <p className="my-4 fs-6">100-999 USDT is subject to 5% tax</p>
+          <p className="my-4 fs-6">1000 USDT and above is subject to 1% tax</p>
+          <p className="my-4 fs-6">
+            Minimum withdrawal amount is 2 USDT--99999999 USDT!
+          </p>
+          <p className="my-4 fs-6">
+            2. Withdrawals will be confirmed and reviewed by multiple nodes, and
+            the arrival time is 1-10 seconds, 24/7 withdrawals, no holidays!
+          </p>
+          <p className="my-4 fs-6">
+            In order to facilitate withdrawals for users in different countries,
+            the platform uses TRC20-USDT and BEP20-USDT as withdrawal
+            currencies! Please check the bound wallet address when withdrawing
+            money!
+          </p>
         </div>
       </div>
       {/* <SupportLink /> */}
