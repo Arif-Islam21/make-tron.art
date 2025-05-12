@@ -179,11 +179,11 @@ function App() {
     <div id="app" className="a-t-1 no-4">
       <div className="login">
         <div className=":uno: container-login relative">
-          <AuthTop
+          {/* <AuthTop
             selectedLanguage={selectedLanguage}
             toggleLangPopup={toggleLangPopup}
             toggleTelegramPopUp={toggleTelegramPopUp}
-          ></AuthTop>
+          ></AuthTop> */}
 
           {alertVisible && (
             <div
@@ -207,23 +207,22 @@ function App() {
                   "slide-in-right .3s cubic-bezier(.25,.46,.45,.94) both",
               }}
             >
+              <div className=":uno: base-user-tab flex items-center justify-center">
+                <Link
+                  className=":uno: tab-item h-full flex cursor-pointer items-center justify-center"
+                  to="/register"
+                >
+                  {t("RegisterByEmail")}
+                </Link>
+                <Link
+                  className="::uno: tab-item h-full flex cursor-pointer items-center justify-center active"
+                  to="/phone-register"
+                >
+                  {t("RegisterByPhone")}
+                </Link>
+              </div>
               <div className=":uno: container-form w-full rd-$radius colorful">
-                <div className=":uno: base-user-tab flex items-center justify-center">
-                  <Link
-                    className=":uno: tab-item h-full flex cursor-pointer items-center justify-center"
-                    to="/register"
-                  >
-                    {t("RegisterByEmail")}
-                  </Link>
-                  <Link
-                    className="::uno: tab-item h-full flex cursor-pointer items-center justify-center active"
-                    to="/phone-register"
-                  >
-                    {t("RegisterByPhone")}
-                  </Link>
-                </div>
                 <div className="base-input">
-                  <div className="label">{t("phone")}</div>
                   <div className="input-box">
                     <div className="input-left-slot">
                       <div className="flex items-center">

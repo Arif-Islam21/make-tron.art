@@ -200,23 +200,22 @@ function App() {
                   "slide-in-right .3s cubic-bezier(.25,.46,.45,.94) both",
               }}
             >
+              {/* TAB ICONS ARE HERE */}
+              <div className=":uno: base-user-tab flex items-center justify-center">
+                <Link
+                  className=":uno: tab-item h-full flex cursor-pointer items-center justify-center active"
+                  to="/register"
+                >
+                  {t("Email")}
+                </Link>
+                <Link
+                  className="::uno: tab-item h-full flex cursor-pointer items-center justify-center"
+                  to="/phone-register"
+                >
+                  {t("Phone")}
+                </Link>
+              </div>
               <div className=":uno: container-form w-full bg-light-blue rd-$radius">
-                {/* TAB ICONS ARE HERE */}
-                {/* <div className=":uno: base-user-tab flex items-center justify-center">
-                  <Link
-                    className=":uno: tab-item h-full flex cursor-pointer items-center justify-center active"
-                    to="/register"
-                  >
-                    {t("RegisterByEmail")}
-                  </Link>
-                  <Link
-                    className="::uno: tab-item h-full flex cursor-pointer items-center justify-center"
-                    to="/phone-register"
-                  >
-                    {t("RegisterByPhone")}
-                  </Link>
-                </div> */}
-                <h2 className="fs-4 fw-bold">Sign Up</h2>
                 <div className="base-input is-text">
                   {/* <div className="label">{t("email")}</div> */}
                   <div className="input-box">
