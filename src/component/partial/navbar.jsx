@@ -96,9 +96,7 @@ const Navbar = () => {
         <NavLink to="/task" className="tab-link">
           {({ isActive }) => (
             <div className={`tab-item ${isActive ? "active" : ""}`}>
-              <p className=" tab-icon">
-                <IoPodium />
-              </p>
+              <i className="bi bi-file-bar-graph  tab-icon"></i>
               <div className="tab-label">{t("Leaderboard")}</div>
             </div>
           )}
