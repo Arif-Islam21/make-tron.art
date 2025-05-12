@@ -1,7 +1,8 @@
 import { useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import logo from "../../assets/images/1x/logoNew.png";
 import { useTranslation } from "react-i18next";
+import "../../styles/authTop.css";
+import { FaTelegramPlane } from "react-icons/fa";
 
 function authTopPart({ toggleLangPopup, toggleTelegramPopUp }) {
   const { t, i18n } = useTranslation();
@@ -61,8 +62,8 @@ function authTopPart({ toggleLangPopup, toggleTelegramPopUp }) {
       : currentLanguage;
 
   return (
-    <div className="top-info relative">
-      <div className=":uno: flex flex-col items-center text-center">
+    <div className="top-info ">
+      {/* <div className=":uno: flex flex-col items-center text-center">
         <div className=":uno: base-logo flex items-center">
           <img
             className="site-img h-full w-full rd-50%"
@@ -80,16 +81,19 @@ function authTopPart({ toggleLangPopup, toggleTelegramPopUp }) {
         <div className=":uno: text-8px font-800">
           Explore the future of creativity!
         </div>
-      </div>
-      <div className="top-tools">
+      </div> */}
+      <div className="top-tools py-2 px-3">
         <div
-          className="base-help-btn cursor-pointer"
+          className="base-help-btn telegram-button cursor-pointer"
           onClick={toggleTelegramPopUp}
         >
-          <div className="i-ri:customer-service-2-line text-18px"></div>
+          <FaTelegramPlane size={28} color="#fff" />
         </div>
-        <div>
-          <div className="base-lang-wrap" onClick={toggleLangPopup}>
+        <div className="d-flex align-items-center justify-content-end">
+          <div
+            className="base-lang-wrap language-button"
+            onClick={toggleLangPopup}
+          >
             <div className="i-ph:globe mr-2px text-18px c-$btn-text"></div>
             <span className="c-$btn-text" id="languageSelect">
               {displayLanguage}

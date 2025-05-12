@@ -20,7 +20,7 @@ import { useTranslation } from "react-i18next";
 import piLogo from "../../assets/images/piCoins/icons/piCoins.png";
 import LanguagePopUp from "../extra/LanguagePopUp";
 import TelegramPopUp from "../extra/TelegramPopUp";
-
+import AuthTop from "../extra/authTopPart";
 import CustomLoader from "../extra/customLoader";
 import Loader from "../extra/loader";
 import { Form } from "react-bootstrap";
@@ -97,18 +97,14 @@ function App() {
     setEyeOutline(!eyeOutline);
   };
   return (
-    <div
-      id="app"
-      className="a-t-1 no-4 d-flex align-items-center justify-content-center"
-    >
+    <div id="app" className="a-t-1 no-4 ">
+      <AuthTop
+        selectedLanguage={selectedLanguage}
+        toggleLangPopup={toggleLangPopup}
+        toggleTelegramPopUp={toggleTelegramPopUp}
+      ></AuthTop>
       <div className="login">
-        <div className=":uno: container-login relative d-flex align-items-center justify-content-center">
-          {/* <AuthTop
-            selectedLanguage={selectedLanguage}
-            toggleLangPopup={toggleLangPopup}
-            toggleTelegramPopUp={toggleTelegramPopUp}
-          ></AuthTop> */}
-
+        <div className=":uno: container-login relative">
           {alertVisible && (
             <div
               id="copyModal"

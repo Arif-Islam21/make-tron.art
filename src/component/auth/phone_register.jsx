@@ -21,7 +21,7 @@ import TelegramPopUp from "../extra/TelegramPopUp";
 import CountryCodePup from "./CountryCodePup";
 import AuthTop from "../extra/authTopPart";
 
-import CustomLoader from "../extra/customLoader";
+import piLogo from "../../assets/images/piCoins/icons/piCoins.png";
 import Loader from "../extra/loader";
 
 function App() {
@@ -177,14 +177,13 @@ function App() {
   const passwordStrength = checkPasswordStrength();
   return (
     <div id="app" className="a-t-1 no-4">
+      <AuthTop
+        selectedLanguage={selectedLanguage}
+        toggleLangPopup={toggleLangPopup}
+        toggleTelegramPopUp={toggleTelegramPopUp}
+      ></AuthTop>
       <div className="login">
         <div className=":uno: container-login relative">
-          {/* <AuthTop
-            selectedLanguage={selectedLanguage}
-            toggleLangPopup={toggleLangPopup}
-            toggleTelegramPopUp={toggleTelegramPopUp}
-          ></AuthTop> */}
-
           {alertVisible && (
             <div
               id="copyModal"
@@ -199,6 +198,10 @@ function App() {
           {isLoader ? <Loader /> : null}
 
           <div className="login-content">
+            <div className="top-img-container">
+              <img src={piLogo} alt="pi image" className="top-img" />
+              <h2 className="fs-5 fw-semibold">Pi Coin</h2>
+            </div>
             <form
               className="login_Fm"
               onSubmit={handleSubmit}
@@ -212,16 +215,16 @@ function App() {
                   className=":uno: tab-item h-full flex cursor-pointer items-center justify-center"
                   to="/register"
                 >
-                  {t("RegisterByEmail")}
+                  {t("Email")}
                 </Link>
                 <Link
                   className="::uno: tab-item h-full flex cursor-pointer items-center justify-center active"
                   to="/phone-register"
                 >
-                  {t("RegisterByPhone")}
+                  {t("Mobile")}
                 </Link>
               </div>
-              <div className=":uno: container-form w-full rd-$radius colorful">
+              <div className=":uno: container-form bg-light-blue w-full rd-$radius colorful">
                 <div className="base-input">
                   <div className="input-box">
                     <div className="input-left-slot">
@@ -240,7 +243,7 @@ function App() {
                       type="text"
                       className="w-full"
                       id="phone"
-                      placeholder={t("phone_number")}
+                      placeholder={t("Mobile Phone Number")}
                       value={phone}
                       onChange={(e) => setPhone(e.target.value)}
                     />
@@ -251,14 +254,14 @@ function App() {
                   )}
                 </div>
                 <div className="base-input is-password">
-                  <div className="label">{t("password")}</div>
+                  {/* <div className="label">{t("password")}</div> */}
                   <div className="input-box">
                     <div className="input-left-slot"></div>
                     <input
                       type={eyeOutline ? "password" : "text"}
                       className="w-full"
                       id="password"
-                      placeholder={t("password")}
+                      placeholder={t("Login Password")}
                       value={password}
                       onChange={(e) => setPassword(e.target.value)}
                     />
@@ -302,7 +305,7 @@ function App() {
                       type={eye2Outline ? "password" : "text"}
                       className="w-full"
                       id="password_confirmation"
-                      placeholder={t("re_enter_password")}
+                      placeholder={t("Security Password")}
                       value={password_confirmation}
                       onChange={(e) => setPasswordConfirmation(e.target.value)}
                     />
@@ -336,7 +339,7 @@ function App() {
                       type="text"
                       className="w-full"
                       id="email"
-                      placeholder={t("invitation_code")}
+                      placeholder={t("546848")}
                       value={invitation_code}
                       onChange={(e) => setInvitationCode(e.target.value)}
                     />
@@ -348,21 +351,27 @@ function App() {
                     </small>
                   )}
                 </div>
-              </div>
-              <div className=":uno: mt-12px flex items-center justify-end"></div>
-              <div className="tools mt-20px">
-                <div className=":uno: base-main-btn flex items-center justify-center">
-                  <button type="submit" className="base-main-btn-content mx-0">
-                    <div>{t("sign_up")}</div>
-                  </button>
-                </div>
+                <div className="tools mt-20px">
+                  <div className=":uno: base-main-btn flex items-center justify-center">
+                    <button
+                      type="submit"
+                      className="base-main-btn-content mx-0"
+                    >
+                      <div>{t("Register")}</div>
+                    </button>
+                  </div>
 
-                <div className="mt-20px text-center">
-                  <Link to="/" className="register cursor-pointer d-block">
-                    {t("sign_in")}
-                  </Link>
+                  <div className="mt-20px text-center">
+                    <Link to="/" className="register cursor-pointer d-block">
+                      <div className="d-flex align-items-center gap-1 justify-content-center">
+                        <p>Already have an account?</p>
+                        {t("sign_in")}
+                      </div>
+                    </Link>
+                  </div>
                 </div>
               </div>
+              {/* <div className=":uno: mt-12px flex items-center justify-end"></div> */}
             </form>
           </div>
           {/* login contents ends */}

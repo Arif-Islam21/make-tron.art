@@ -25,7 +25,7 @@ import "../../styles/login.css";
 import LanguagePopUp from "../extra/LanguagePopUp";
 import TelegramPopUp from "../extra/TelegramPopUp";
 
-import CustomLoader from "../extra/customLoader";
+import piLogo from "../../assets/images/piCoins/icons/piCoins.png";
 import Loader from "../extra/loader";
 
 function App() {
@@ -168,13 +168,13 @@ function App() {
   const passwordStrength = checkPasswordStrength();
   return (
     <div id="app" className="a-t-1 no-4">
+      <AuthTop
+        selectedLanguage={selectedLanguage}
+        toggleLangPopup={toggleLangPopup}
+        toggleTelegramPopUp={toggleTelegramPopUp}
+      ></AuthTop>
       <div className="login">
-        <div className=":uno: container-login relative d-flex align-items-center justify-content-center">
-          {/* <AuthTop
-            selectedLanguage={selectedLanguage}
-            toggleLangPopup={toggleLangPopup}
-            toggleTelegramPopUp={toggleTelegramPopUp}
-          ></AuthTop> */}
+        <div className=":uno: container-login relative ">
           {/* <!-- top-info ends --> */}
 
           {alertVisible && (
@@ -192,6 +192,10 @@ function App() {
 
           {/* Conditional rendering of the loader */}
           <div className="login-content">
+            <div className="top-img-container">
+              <img src={piLogo} alt="pi image" className="top-img" />
+              <h2 className="fs-5 fw-semibold">Pi Coin</h2>
+            </div>
             <form
               className="login_Fm"
               onSubmit={handleSubmit}
@@ -216,8 +220,8 @@ function App() {
                 </Link>
               </div>
               <div className=":uno: container-form w-full bg-light-blue rd-$radius">
-                <div className="base-input is-text">
-                  {/* <div className="label">{t("email")}</div> */}
+                {/* <div className="base-input is-text">
+                  <div className="label">{t("email")}</div>
                   <div className="input-box">
                     <div className="input-left-slot"></div>
                     <input
@@ -230,10 +234,10 @@ function App() {
                     />
                     <div className="input-right-slot"></div>
                   </div>
-                  {/* {errors.email && (
+                  {errors.email && (
                     <small className="text-danger">{errors.userName}</small>
-                  )} */}
-                </div>
+                  )}
+                </div> */}
                 <div className="base-input is-text">
                   {/* <div className="label">{t("email")}</div> */}
                   <div className="input-box">
@@ -241,7 +245,7 @@ function App() {
                     <input
                       type="email"
                       className="w-full custom-placeholder"
-                      placeholder={t("email")}
+                      placeholder={t("Email")}
                       id="email"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
@@ -260,7 +264,7 @@ function App() {
                       type={eye2Outline ? "password" : "text"}
                       className="w-full"
                       id="password"
-                      placeholder={t("password")}
+                      placeholder={t("Login Password")}
                       value={password}
                       onChange={handlePasswordChange}
                     />
@@ -303,7 +307,7 @@ function App() {
                       type={eyeOutline ? "password" : "text"}
                       className="w-full"
                       id="password_confirmation"
-                      placeholder={t("re_enter_password")}
+                      placeholder={t("Security Password")}
                       value={password_confirmation}
                       onChange={(e) => setPasswordconfirmation(e.target.value)}
                     />
@@ -337,7 +341,8 @@ function App() {
                       type="text"
                       className="w-full"
                       id="invitation_code"
-                      placeholder={t("invitation_code")}
+                      placeholder={t("546848")}
+                      defaultValue={546848}
                       value={invitation_code}
                       onChange={(e) => setInvitationcode(e.target.value)}
                     />
@@ -352,12 +357,12 @@ function App() {
                 <div className="tools mt-5px">
                   <div className=":uno: my-3 flex items-center justify-center">
                     <Button
-                      variant="success"
+                      variant="primary"
                       size="lg"
                       type="submit"
                       className="w-100"
                     >
-                      <div>{t("sign_up")}</div>
+                      <div>{t("Register")}</div>
                     </Button>
                   </div>
 
@@ -366,7 +371,11 @@ function App() {
                       to="/"
                       className="register cursor-pointer nav-underline d-block"
                     >
-                      {t("sign_in")}
+                      {" "}
+                      <div className="d-flex align-items-center gap-1 justify-content-center">
+                        <p>Already have an account?</p>
+                        {t("sign_in")}
+                      </div>
                     </Link>
                   </div>
                 </div>

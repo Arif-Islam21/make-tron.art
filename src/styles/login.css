@@ -10,7 +10,7 @@
 }
 
 .bg-light-blue {
-  background-color: #0f5160;
+  background: linear-gradient(90deg, #055945, #033c41);
   box-shadow: 0px 12px 16px #000;
 }
 

@@ -14,7 +14,7 @@ import axios from "axios";
 import { useSnackbar } from "notistack";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-
+import AuthTop from "../extra/authTopPart";
 import piLogo from "../../assets/images/piCoins/icons/piCoins.png";
 import LanguagePopUp from "../extra/LanguagePopUp";
 import CountryCodePup from "./CountryCodePup";
@@ -111,14 +111,13 @@ const TelegramLogin = () => {
   };
   return (
     <div id="app" className="a-t-1 no-4">
+      <AuthTop
+        selectedLanguage={selectedLanguage}
+        toggleLangPopup={toggleLangPopup}
+        toggleTelegramPopUp={toggleTelegramPopUp}
+      ></AuthTop>
       <div className="login">
         <div className=":uno: container-login relative">
-          {/* <AuthTop
-            selectedLanguage={selectedLanguage}
-            toggleLangPopup={toggleLangPopup}
-            toggleTelegramPopUp={toggleTelegramPopUp}
-          ></AuthTop> */}
-
           {alertVisible && (
             <div
               id="copyModal"
