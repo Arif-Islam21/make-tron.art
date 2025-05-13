@@ -50134,9 +50134,9 @@
   height: 50px;
   border-radius: 50%;
   background: transparent;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
   box-shadow: var(--box-shadow);
-  border: 1px solid var(--border-color);
+  border: 2px solid white;
 }
 
 .mine-wrap-content .main-tools-part .item .icon-box .icon[data-v-f004e884] {
@@ -50159,8 +50159,13 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 12px 0;
+  padding: 12px 10px;
   border-bottom: 1px solid var(--bg-weight);
+  background-color: white;
+  color: #0f5160;
+  font-size: 600;
+  margin: 14px auto;
+  border-radius: 8px;
 }
 
 .mine-wrap-content .secondary-tools-part .item .icon[data-v-f004e884] {
@@ -50173,7 +50178,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #054242;
+  color: #0f5160;
+  font-size: 1.3rem;
   border-radius: 50%;
   margin-right: 8px;
 }
@@ -51825,8 +51831,9 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  background: var(--btn-bg3);
+  background: gray;
   font-size: 13px;
+  color: #0f5160;
 }
 
 .recharge-wrap .base-main-btn[data-v-e0ca97fe] {

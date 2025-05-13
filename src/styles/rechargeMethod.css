@@ -1,22 +1,21 @@
 .recharge-div {
   padding: 1rem 2rem;
-  background-color: #7a034f;
+  background-color: #383847;
   border-radius: 1.2rem;
   width: 100%;
-  border: 2px solid red;
 }
 
 .currency-btn {
-  background-color: #800080; /* Purple */
+  background-color: #383847; /* Purple */
   padding: 15px 20px;
-  border-radius: 12px;
+  border-bottom: 1px solid gray;
   text-decoration: none;
   color: white;
   transition: background-color 0.3s ease;
 }
 
 .currency-btn:hover {
-  background-color: #a020f0; /* Lighter purple on hover */
+  background-color: #636375; /* Lighter purple on hover */
 }
 
 .currency-icon {
@@ -27,4 +26,10 @@
 .currency-text {
   font-weight: bold;
   font-size: 1.2rem;
+}
+
+.recharge-container {
+  background-color: #383847;
+  padding: 22px;
+  border-radius: 14px;
 }

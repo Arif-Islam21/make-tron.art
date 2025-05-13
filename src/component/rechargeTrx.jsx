@@ -27,6 +27,7 @@ import TelegramPopUp from "./extra/TelegramPopUp";
 
 import CustomLoader from "./extra/customLoader";
 import Loader from "./extra/loader";
+import { FaExclamation } from "react-icons/fa";
 
 const recharge = () => {
   const navigate = useNavigate();
@@ -126,9 +127,9 @@ const recharge = () => {
           <div
             data-v-e0ca97fe=""
             className=":uno: container-card relative rd-$card-radius p-$mg c-$btn-text"
-            style={{ background: "#ffffff30" }}
+            style={{ background: "#383847" }}
           >
-            <div
+            {/* <div
               data-v-e0ca97fe=""
               className=":uno: base-logo flex items-center small-logo"
             >
@@ -138,22 +139,8 @@ const recharge = () => {
                 alt="logo"
               />
               <div className=":uno: site-name ml-8px">Make-Tron.Art</div>
-            </div>
+            </div> */}
             {/* base logo ends */}
-            <div
-              data-v-e0ca97fe=""
-              className="my-20px flex items-center justify-center"
-            >
-              <img
-                data-v-e0ca97fe=""
-                className="h-30px w-30px"
-                src={trx}
-                alt="logo"
-              />
-              <span data-v-e0ca97fe="" className="ml-4px font-bold">
-                TRX
-              </span>
-            </div>
 
             {alertVisible && (
               <div
@@ -191,9 +178,23 @@ const recharge = () => {
             {/* qrcode ends */}
             <div
               data-v-e0ca97fe=""
-              className=":uno: my-$mg text-center text-18px font-bold"
+              className="my-20px flex items-center justify-center"
             >
-              {t("address")}
+              <img
+                data-v-e0ca97fe=""
+                className="h-30px w-30px"
+                src={trx}
+                alt="logo"
+              />
+              <span data-v-e0ca97fe="" className="ml-4px font-bold">
+                TRX
+              </span>
+            </div>
+            <div
+              data-v-e0ca97fe=""
+              className=":uno: my-$mg text-start text-18px font-bold"
+            >
+              {t("Deposit Address")}
             </div>
             <CopyAddress
               address={data.address_base58}
@@ -213,9 +214,12 @@ const recharge = () => {
             data-v-e0ca97fe=""
             id="bottomInfo"
             className=":uno: container-card relative rd-$card-radius p-$mg c-$btn-text mt-4"
-            style={{ background: "#ffffff30" }}
+            style={{ background: "#383847" }}
           >
             <div className="rich-text text-base">
+              <h2 className="d-flex align-items-center justify-content-start my-3">
+                <FaExclamation /> <span>Warm reminder</span>
+              </h2>
               <p>
                 <span style={{ fontSize: "10pt" }}>
                   1. {t("recharge_notice_1")}

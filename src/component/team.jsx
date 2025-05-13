@@ -410,7 +410,7 @@ const Team = () => {
           <div className="team-lvl-card">
             <h1>LEV 1</h1>
             <div className="d-flex align-items-center gap-1">
-              <h5>Valid number/Number of people</h5>
+              <h5 className="small">Valid number/Number of people</h5>
               <h3>0/0</h3>
               <Link to={`/team-details?level=${1}`}>
                 <MdOutlineKeyboardArrowRight size={30} />
@@ -420,7 +420,7 @@ const Team = () => {
           <div className="team-lvl-card">
             <h1>LEV 2</h1>
             <div className="d-flex align-items-center gap-1">
-              <h5>Valid number/Number of people</h5>
+              <h5 className="small">Valid number/Number of people</h5>
               <h3>0/0</h3>
               <Link to={`/team-details?level=${2}`}>
                 <MdOutlineKeyboardArrowRight size={30} />
@@ -428,11 +428,41 @@ const Team = () => {
             </div>
           </div>
           <div className="team-lvl-card">
-            <h1>LEV 1</h1>
+            <h1>LEV 3</h1>
             <div className="d-flex align-items-center gap-1">
-              <h5>Valid number/Number of people</h5>
+              <h5 className="small">Valid number/Number of people</h5>
               <h3>0/0</h3>
               <Link to={`/team-details?level=${3}`}>
+                <MdOutlineKeyboardArrowRight size={30} />
+              </Link>
+            </div>
+          </div>
+          <div className="team-lvl-card">
+            <h1>LEV 4</h1>
+            <div className="d-flex align-items-center gap-1">
+              <h5 className="small">Valid number/Number of people</h5>
+              <h3>0/0</h3>
+              <Link to={`/team-details?level=${4}`}>
+                <MdOutlineKeyboardArrowRight size={30} />
+              </Link>
+            </div>
+          </div>
+          <div className="team-lvl-card">
+            <h1>LEV 5</h1>
+            <div className="d-flex align-items-center gap-1">
+              <h5 className="small">Valid number/Number of people</h5>
+              <h3>0/0</h3>
+              <Link to={`/team-details?level=${5}`}>
+                <MdOutlineKeyboardArrowRight size={30} />
+              </Link>
+            </div>
+          </div>
+          <div className="team-lvl-card">
+            <h1>LEV 6</h1>
+            <div className="d-flex align-items-center gap-1">
+              <h5 className="small">Valid number/Number of people</h5>
+              <h3>0/0</h3>
+              <Link to={`/team-details?level=${6}`}>
                 <MdOutlineKeyboardArrowRight size={30} />
               </Link>
             </div>

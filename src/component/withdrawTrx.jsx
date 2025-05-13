@@ -164,7 +164,7 @@ const withdraw = () => {
                 <Link
                   to="/withdraw-trx"
                   id="trc20Usdt"
-                  className="trx-btn my-2"
+                  className="trx-btn bg-primary my-2"
                 >
                   TRX
                 </Link>
@@ -173,7 +173,7 @@ const withdraw = () => {
                   id="trc20Usdt"
                   className="trx-btn my-2"
                 >
-                  TRX
+                  BEP 20-USDT
                 </Link>
               </div>
             </div>

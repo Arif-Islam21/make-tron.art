@@ -131,11 +131,7 @@ const rechargeMethod = () => {
           className="container py-4"
           style={{ backgroundColor: "transparent", minHeight: "100vh" }}
         >
-          <h2 className="text-white fs-4 mb-4">
-            Choose currency to continue with:
-          </h2>
-
-          <div className="d-flex flex-column gap-3">
+          <div className="d-flex flex-column recharge-container gap-3">
             <Link
               to="/recharge"
               className="currency-btn d-flex justify-content-between align-items-center"

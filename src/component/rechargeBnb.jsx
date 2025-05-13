@@ -27,6 +27,7 @@ import bnb from "../assets/images/bnb_icon-C7ti1KQ3.png";
 
 import CustomLoader from "./extra/customLoader";
 import Loader from "./extra/loader";
+import { FaExclamation } from "react-icons/fa";
 
 const RechargeBnb = () => {
   const navigate = useNavigate();
@@ -126,9 +127,9 @@ const RechargeBnb = () => {
           <div
             data-v-e0ca97fe=""
             className=":uno: container-card relative rd-$card-radius p-$mg c-$btn-text"
-            style={{ background: "#ffffff30" }}
+            style={{ background: "#383847" }}
           >
-            <div
+            {/* <div
               data-v-e0ca97fe=""
               className=":uno: base-logo flex items-center small-logo"
             >
@@ -138,22 +139,8 @@ const RechargeBnb = () => {
                 alt="logo"
               />
               <div className=":uno: site-name ml-8px">GPTROBOT-USD</div>
-            </div>
+            </div> */}
             {/* base logo ends */}
-            <div
-              data-v-e0ca97fe=""
-              className="my-20px flex items-center justify-center"
-            >
-              <img
-                data-v-e0ca97fe=""
-                className="h-30px w-30px"
-                src={bnb}
-                alt="logo"
-              />
-              <span data-v-e0ca97fe="" className="ml-4px font-bold">
-                BNB
-              </span>
-            </div>
 
             {alertVisible && (
               <div
@@ -191,9 +178,23 @@ const RechargeBnb = () => {
             {/* qrcode ends */}
             <div
               data-v-e0ca97fe=""
-              className=":uno: my-$mg text-center text-18px font-bold"
+              className="my-20px flex items-center justify-center"
             >
-              {t("address")}
+              <img
+                data-v-e0ca97fe=""
+                className="h-30px w-30px"
+                src={bnb}
+                alt="logo"
+              />
+              <span data-v-e0ca97fe="" className="ml-4px font-bold">
+                BNB
+              </span>
+            </div>
+            <div
+              data-v-e0ca97fe=""
+              className=":uno: my-$mg text-start text-18px font-bold"
+            >
+              {t("Deposit Address")}
             </div>
             <CopyAddress
               address={"0xf481868432B8c6d6488bEd941d5a12aa7023D1e9"}
@@ -213,18 +214,22 @@ const RechargeBnb = () => {
             data-v-e0ca97fe=""
             id="bottomInfo"
             className=":uno: container-card relative rd-$card-radius p-$mg c-$btn-text mt-4"
-            style={{ background: "#ffffff30" }}
+            style={{ background: "#383847" }}
           >
             <div className="rich-text text-base">
+              <h2 className="d-flex align-items-center justify-content-start my-3">
+                <FaExclamation /> <span>Warm reminder</span>
+              </h2>
               <p>
                 <span style={{ fontSize: "10pt" }}>
-                  1. Copy the address above or scan the QR code and select BNB network to deposit BNB
+                  1. Copy the address above or scan the QR code and select BNB
+                  network to deposit BNB
                 </span>
               </p>
               <p>
                 <span style={{ fontSize: "10pt" }}>
-                  2. Please do not recharge other non-BNB assets.
-                  The funds will arrive in your account in about 1 to 3 minutes
+                  2. Please do not recharge other non-BNB assets. The funds will
+                  arrive in your account in about 1 to 3 minutes
                 </span>
               </p>
               <p>

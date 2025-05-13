@@ -16,6 +16,11 @@ import "../styles/me.css";
 import { Link, useNavigate } from "react-router-dom";
 import depositeMe from "../assets/images/deposit_me.png";
 import withdrawMe from "../assets/images/withdraw-me.png";
+import { BsBank2 } from "react-icons/bs";
+import { BiSupport, BiTransferAlt } from "react-icons/bi";
+import { FcAbout, FcInvite } from "react-icons/fc";
+import { LuMessageCircleQuestion } from "react-icons/lu";
+import { ImBooks } from "react-icons/im";
 
 //component
 import Navbar from "./partial/navbar";
@@ -39,7 +44,8 @@ import {
   FaMoneyBillTrendUp,
   FaRegMoneyBill1,
 } from "react-icons/fa6";
-import { MdAccountBox } from "react-icons/md";
+import { MdAccountBox, MdOutlinePassword } from "react-icons/md";
+import { PiHandWithdrawBold } from "react-icons/pi";
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -201,7 +207,7 @@ const HomePage = () => {
               <Link data-v-f004e884="" to="/recharge-method" className="">
                 <div data-v-f004e884="" className="item">
                   <div data-v-f004e884="" className="icon-box">
-                    <FaRegMoneyBill1 size={23} />
+                    <BsBank2 size={23} />
                   </div>
                   <div data-v-f004e884="" className="label">
                     {t("recharge")}
@@ -211,7 +217,7 @@ const HomePage = () => {
               <Link data-v-f004e884="" to="/withdraw-trx" className="">
                 <div data-v-f004e884="" className="item">
                   <div data-v-f004e884="" className="icon-box">
-                    <FaMoneyBillTransfer size={23} />
+                    <PiHandWithdrawBold size={23} />
                   </div>
                   <div data-v-f004e884="" className="label">
                     {t("withdraw")}
@@ -221,27 +227,143 @@ const HomePage = () => {
               <Link data-v-f004e884="" to="/account" className="">
                 <div data-v-f004e884="" className="item">
                   <div data-v-f004e884="" className="icon-box">
-                    <MdAccountBox size={23} />
+                    <FaMoneyBillTrendUp size={23} />
                   </div>
                   <div data-v-f004e884="" className="label">
-                    {t("account")}
+                    {t("Financial Records")}
                   </div>
                 </div>
               </Link>
               <Link data-v-f004e884="" to="/financial" className="">
                 <div data-v-f004e884="" className="item">
                   <div data-v-f004e884="" className="icon-box">
-                    <FaMoneyBillTrendUp size={23} />
+                    <BiTransferAlt size={23} />
                   </div>
                   <div data-v-f004e884="" className="label">
-                    {t("financial_record")}
+                    {t("Pi & USDT")}
                   </div>
                 </div>
               </Link>
             </div>
             {/* me important links */}
             <div data-v-f004e884="" className="secondary-tools-part">
-              <Link data-v-f004e884="" onClick={downloadApp} className="">
+              <Link data-v-f004e884="" className="">
+                <div data-v-f004e884="" className="item">
+                  <div data-v-f004e884="" className="flex items-center">
+                    <div data-v-f004e884="" className="icon-box">
+                      <FcInvite />
+                    </div>
+                    <div data-v-f004e884="" className="label">
+                      {t("Invite")}
+                    </div>
+                  </div>
+                  <div
+                    data-v-f004e884=""
+                    className="icon i-material-symbols-arrow-forward-ios"
+                  ></div>
+                </div>
+              </Link>
+              <Link to="/change-password" data-v-f004e884="" className="">
+                <div data-v-f004e884="" className="item">
+                  <div data-v-f004e884="" className="flex items-center">
+                    <div data-v-f004e884="" className="icon-box">
+                      <MdOutlinePassword />
+                    </div>
+                    <div data-v-f004e884="" className="label">
+                      {t("Login Password")}
+                    </div>
+                  </div>
+                  <div
+                    data-v-f004e884=""
+                    className="icon i-material-symbols-arrow-forward-ios"
+                  ></div>
+                </div>
+              </Link>
+
+              <Link data-v-f004e884="" to="/change-password" className="">
+                <div data-v-f004e884="" className="item">
+                  <div data-v-f004e884="" className="flex items-center">
+                    <div data-v-f004e884="" className="icon-box">
+                      <div
+                        data-v-f004e884=""
+                        className="icon i-solar-password-outline"
+                      ></div>
+                    </div>
+                    <div data-v-f004e884="" className="label">
+                      {t("Security Password")}
+                    </div>
+                  </div>
+                  <div
+                    data-v-f004e884=""
+                    className="icon i-material-symbols-arrow-forward-ios"
+                  ></div>
+                </div>
+              </Link>
+              <Link data-v-f004e884="" className="">
+                <div data-v-f004e884="" className="item">
+                  <div data-v-f004e884="" className="flex items-center">
+                    <div data-v-f004e884="" className="icon-box">
+                      <LuMessageCircleQuestion />
+                    </div>
+                    <div data-v-f004e884="" className="label">
+                      {t("FAQ")}
+                    </div>
+                  </div>
+                  <div
+                    data-v-f004e884=""
+                    className="icon i-material-symbols-arrow-forward-ios"
+                  ></div>
+                </div>
+              </Link>
+              <Link data-v-f004e884="" className="">
+                <div data-v-f004e884="" className="item">
+                  <div data-v-f004e884="" className="flex items-center">
+                    <div data-v-f004e884="" className="icon-box">
+                      <ImBooks />
+                    </div>
+                    <div data-v-f004e884="" className="label">
+                      {t("white Paper")}
+                    </div>
+                  </div>
+                  <div
+                    data-v-f004e884=""
+                    className="icon i-material-symbols-arrow-forward-ios"
+                  ></div>
+                </div>
+              </Link>
+              <Link data-v-f004e884="" className="">
+                <div data-v-f004e884="" className="item">
+                  <div data-v-f004e884="" className="flex items-center">
+                    <div data-v-f004e884="" className="icon-box">
+                      <FcAbout />
+                    </div>
+                    <div data-v-f004e884="" className="label">
+                      {t("About Us")}
+                    </div>
+                  </div>
+                  <div
+                    data-v-f004e884=""
+                    className="icon i-material-symbols-arrow-forward-ios"
+                  ></div>
+                </div>
+              </Link>
+              <Link data-v-f004e884="" className="">
+                <div data-v-f004e884="" className="item">
+                  <div data-v-f004e884="" className="flex items-center">
+                    <div data-v-f004e884="" className="icon-box">
+                      <BiSupport />
+                    </div>
+                    <div data-v-f004e884="" className="label">
+                      {t("Contact Customer Service")}
+                    </div>
+                  </div>
+                  <div
+                    data-v-f004e884=""
+                    className="icon i-material-symbols-arrow-forward-ios"
+                  ></div>
+                </div>
+              </Link>
+              {/* <Link data-v-f004e884="" onClick={downloadApp} className="">
                 <div data-v-f004e884="" className="item">
                   <div data-v-f004e884="" className="flex items-center">
                     <div data-v-f004e884="" className="icon-box">
@@ -275,27 +397,9 @@ const HomePage = () => {
                     className="icon i-material-symbols-arrow-forward-ios"
                   ></div>
                 </div>
-              </Link>
-              <Link data-v-f004e884="" to="/change-password" className="">
-                <div data-v-f004e884="" className="item">
-                  <div data-v-f004e884="" className="flex items-center">
-                    <div data-v-f004e884="" className="icon-box">
-                      <div
-                        data-v-f004e884=""
-                        className="icon i-solar-password-outline"
-                      ></div>
-                    </div>
-                    <div data-v-f004e884="" className="label">
-                      {t("change_pass")}
-                    </div>
-                  </div>
-                  <div
-                    data-v-f004e884=""
-                    className="icon i-material-symbols-arrow-forward-ios"
-                  ></div>
-                </div>
-              </Link>
-              <Link data-v-f004e884="" to="/transfer" className="">
+              </Link> */}
+
+              {/* <Link data-v-f004e884="" to="/transfer" className="">
                 <div data-v-f004e884="" className="item">
                   <div data-v-f004e884="" className="flex items-center">
                     <div data-v-f004e884="" className="icon-box">
@@ -313,7 +417,7 @@ const HomePage = () => {
                     className="icon i-material-symbols-arrow-forward-ios"
                   ></div>
                 </div>
-              </Link>
+              </Link> */}
               <button
                 data-v-f004e884=""
                 className="me-logout-btn"
@@ -330,7 +434,7 @@ const HomePage = () => {
                     ></div>
                   </div>
                   <div data-v-f004e884="" className="label">
-                    {t("sign_out")}
+                    {t("LogOut")}
                   </div>
                 </div>
                 <div

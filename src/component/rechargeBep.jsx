@@ -27,6 +27,7 @@ import TelegramPopUp from "./extra/TelegramPopUp";
 
 import CustomLoader from "./extra/customLoader";
 import Loader from "./extra/loader";
+import { FaExclamation } from "react-icons/fa";
 
 const RechargeBep = () => {
   const navigate = useNavigate();
@@ -126,9 +127,9 @@ const RechargeBep = () => {
           <div
             data-v-e0ca97fe=""
             className=":uno: container-card relative rd-$card-radius p-$mg c-$btn-text"
-            style={{ background: "#ffffff30" }}
+            style={{ background: "#383847" }}
           >
-            <div
+            {/* <div
               data-v-e0ca97fe=""
               className=":uno: base-logo flex items-center small-logo"
             >
@@ -138,22 +139,8 @@ const RechargeBep = () => {
                 alt="logo"
               />
               <div className=":uno: site-name ml-8px">Make-Tron.Art</div>
-            </div>
+            </div> */}
             {/* base logo ends */}
-            <div
-              data-v-e0ca97fe=""
-              className="my-20px flex items-center justify-center"
-            >
-              <img
-                data-v-e0ca97fe=""
-                className="h-30px w-30px"
-                src={trx}
-                alt="logo"
-              />
-              <span data-v-e0ca97fe="" className="ml-4px font-bold">
-                Bep20-USDT
-              </span>
-            </div>
 
             {alertVisible && (
               <div
@@ -191,9 +178,23 @@ const RechargeBep = () => {
             {/* qrcode ends */}
             <div
               data-v-e0ca97fe=""
-              className=":uno: my-$mg text-center text-18px font-bold"
+              className="my-20px flex items-center justify-center"
             >
-              {t("address")}
+              <img
+                data-v-e0ca97fe=""
+                className="h-30px w-30px"
+                src={trx}
+                alt="logo"
+              />
+              <span data-v-e0ca97fe="" className="ml-4px font-bold">
+                Bep20-USDT
+              </span>
+            </div>
+            <div
+              data-v-e0ca97fe=""
+              className=":uno: my-$mg text-start text-18px font-bold"
+            >
+              {t("Deposit Address")}
             </div>
             <CopyAddress
               address={"0xf481868432B8c6d6488bEd941d5a12aa7023D1e9"}
@@ -213,9 +214,13 @@ const RechargeBep = () => {
             data-v-e0ca97fe=""
             id="bottomInfo"
             className=":uno: container-card relative rd-$card-radius p-$mg c-$btn-text mt-4"
-            style={{ background: "#ffffff30" }}
+            style={{ background: "#383847" }}
           >
             <div className="rich-text text-base">
+              {" "}
+              <h2 className="d-flex align-items-center justify-content-start my-3">
+                <FaExclamation /> <span>Warm reminder</span>
+              </h2>
               <p>
                 <span style={{ fontSize: "10pt" }}>
                   1. Copy the address above or scan the QR code and select BNB

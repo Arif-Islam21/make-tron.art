@@ -20,8 +20,10 @@
   align-items: center;
   justify-content: space-between;
   min-width: 100%;
-  background-color: transparent;
-  padding: 10px 3px;
+  background-color: white;
+  padding: 12px 10px;
+  border-radius: 8px;
+  color: #0f5160;
 }
 
 .me-icon {
@@ -31,5 +33,5 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #0f5160;
+  color: #0f5160;
 }
