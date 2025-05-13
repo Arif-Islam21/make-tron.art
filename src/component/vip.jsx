@@ -138,9 +138,9 @@ const vip = () => {
         ></Header>
         {/* NO CHANGES HERE */}
         <div data-v-819be10a="" className="vip-info-wrap">
-          <div data-v-819be10a="" className="vip-log">
+          {/* <div data-v-819be10a="" className="vip-log">
             {t("upgrade_log")}
-          </div>
+          </div> */}
         </div>
         <div
           className={`van-overlay ${isUncloked ? "show" : "d-none"}`}
@@ -260,16 +260,16 @@ const vip = () => {
               <FaUserGear size={26} />
             </Link>
           </div>
-          <div className="row my-3">
-            <div className="col-6 mb-3 mb-md-0">
-              <div className="team-item-card">
-                <div className="text-muted">{t("Working Hours")}</div>
+          <div className="row my-3 g-3">
+            <div className="col-6">
+              <div className="team-item-card h-100 d-flex flex-column justify-content-between p-3">
+                <div className="column-text">{t("Working Hours")}</div>
                 <div className="text-primary text-end fs-5">24H</div>
               </div>
             </div>
-            <div className="col-6 mb-3 mb-md-0">
-              <div className="team-item-card">
-                <div className="text-muted">{t("Mining Speed")}</div>
+            <div className="col-6">
+              <div className="team-item-card h-100 d-flex flex-column justify-content-between p-3">
+                <div className="column-text">{t("Mining Speed")}</div>
                 <div className="text-primary text-end fs-5">3.888 Pi/H</div>
               </div>
             </div>

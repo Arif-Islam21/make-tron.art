@@ -130,7 +130,7 @@ const Team = () => {
                 </div>
 
                 <div className="invite-link rounded">
-                  <span className="text-truncate small">{invitationLink}</span>
+                  <span className="invite-text">{invitationLink}</span>
                 </div>
 
                 <FollowUs />
@@ -147,30 +147,30 @@ const Team = () => {
                 </h2>
               </div>
               {/* First set of team info */}
-              <div className="row mb-3">
-                <div className="col-6 mb-3 mb-md-0">
-                  <div className="team-item-card">
-                    <div className="text-muted">
+              <div className="row g-3 mb-3">
+                <div className="col-6">
+                  <div className="team-item-card h-100 p-3 shadow-sm rounded bg-dark text-white d-flex flex-column justify-content-between">
+                    <div className="team-card-text small">
                       {t("Total number of team")}
                     </div>
-                    <div className="text-primary text-end fs-5">
+                    <div className="text-primary text-end fs-4 fw-semibold">
                       {data?.teamsize || "0"}
                     </div>
                   </div>
                 </div>
-                <div className="col-6 mb-3 mb-md-0">
-                  <div className="team-item-card">
-                    <div className="text-muted">
+                <div className="col-6">
+                  <div className="team-item-card h-100 p-3 shadow-sm rounded bg-dark text-white d-flex flex-column justify-content-between">
+                    <div className="team-card-text small">
                       {t("Total promotion commission")}
                     </div>
-                    <div className="text-primary text-end fs-5">
+                    <div className="text-primary text-end fs-4 fw-semibold">
                       ${data?.totalDepositSum || "0"}
                     </div>
                   </div>
                 </div>
                 {/* <div className="col-12 col-md-4 mb-3 mb-md-0">
                   <div className="team-item-card">
-                    <div className="text-muted">{t("team_withdrawal")}</div>
+                    <div className="team-card-text">{t("team_withdrawal")}</div>
                     <div className="text-primary fs-5">
                       ${data?.totalWithdrawSum || "0"}
                     </div>
@@ -179,28 +179,30 @@ const Team = () => {
               </div>
 
               {/* Second set of team info */}
-              <div className="row">
-                <div className="col-6 mb-3 mb-md-0">
-                  <div className="team-item-card">
-                    <div className="text-muted">{t("Total team recharge")}</div>
-                    <div className="text-primary text-end fs-5">
+              <div className="row g-3 mb-3">
+                <div className="col-6">
+                  <div className="team-item-card h-100 p-3 shadow-sm rounded bg-dark text-white d-flex flex-column justify-content-between">
+                    <div className="team-card-text small">
+                      {t("Total team recharge")}
+                    </div>
+                    <div className="text-primary text-end fs-4 fw-semibold">
                       {data?.teamsizeToday || "0"}
                     </div>
                   </div>
                 </div>
-                <div className="col-6 mb-3 mb-md-0">
-                  <div className="team-item-card">
-                    <div className="text-muted">
+                <div className="col-6">
+                  <div className="team-item-card h-100 p-3 shadow-sm rounded bg-dark text-white d-flex flex-column justify-content-between">
+                    <div className="team-card-text small">
                       {t("Team total withdrawals")}
                     </div>
-                    <div className="text-primary text-end fs-5">
-                      {data.firstTimeRecharge || "0"}
+                    <div className="text-primary text-end fs-4 fw-semibold">
+                      {data?.firstTimeRecharge || "0"}
                     </div>
                   </div>
                 </div>
                 {/* <div className="col-12 col-md-4 mb-3 mb-md-0">
                   <div className="team-item-card">
-                    <div className="text-muted">{t("first_wthdrawal")}</div>
+                    <div className="team-card-text">{t("first_wthdrawal")}</div>
                     <div className="text-primary fs-5">
                       {data.firstTimeWithdraw || "0"}
                     </div>

@@ -7,25 +7,31 @@ import tron from "../../assets/images/piCoins/images/tron.png";
 const VipNewAdditionCard = ({ item }) => {
   const { name, image, price, days, profitPerDay, durationDays } = item;
   return (
-    <Card className="gpu-card text-white my-4">
+    <Card className="gpu-card text-white my-4 w-100">
       <Card.Body>
-        <h5 className="gpu-title fs-4">{name}</h5>
+        <h5 className="gpu-title fs-5">{name}</h5>
 
-        <div className="d-flex align-items-center gap-3">
-          <img src={image} alt={name} className="gpu-img" />
+        <div className="d-flex gap-3 mt-3" style={{ minHeight: "120px" }}>
+          <div className="flex-shrink-0 d-flex align-items-center">
+            <img src={image} alt={name} className="gpu-img" />
+          </div>
 
-          <div className="gpu-details text-center">
-            <div className="d-flex align-items-center gap-2">
+          <div className="gpu-details d-flex flex-column justify-content-center flex-fill text-start text-wrap">
+            <div className="d-flex align-items-center gap-2 mb-2 flex-wrap">
               <img src={pi} alt="profit" className="icon" />
-              <span className="text-primary fw-bold">{profitPerDay}/Days</span>
+              <span className="text-primary fw-bold text-break">
+                {profitPerDay}/Days
+              </span>
             </div>
-            <div className="d-flex align-items-center gap-2">
+            <div className="d-flex align-items-center gap-2 mb-2 flex-wrap">
               <img src={clock} alt="time" className="icon" />
-              <span className="text-primary">{durationDays}Days</span>
+              <span className="text-primary text-break">
+                {durationDays}Days
+              </span>
             </div>
-            <div className="d-flex align-items-center gap-2">
+            <div className="d-flex align-items-center gap-2 flex-wrap">
               <img src={tron} alt="price" className="icon" />
-              <span className="text-primary">{price}</span>
+              <span className="text-primary text-break">{price}</span>
             </div>
           </div>
         </div>

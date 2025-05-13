@@ -58,11 +58,25 @@
 
 /* gpu card */
 .gpu-card {
-  background-color: #2a2a38;
-  border-radius: 16px;
-  padding: 1rem;
-  border: none;
   width: 100%;
+  overflow: hidden;
+  background-color: #0b0f1a;
+}
+
+.gpu-img {
+  width: 100px;
+  height: 100%;
+  max-height: 120px;
+  object-fit: contain;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+}
+
+.gpu-details span {
+  word-break: break-word;
 }
 
 .gpu-title {
@@ -70,13 +84,6 @@
   font-weight: bold;
   text-align: right;
   margin-bottom: 1rem;
-}
-
-.gpu-img {
-  width: 100%;
-  height: auto;
-  max-height: 170px;
-  border-radius: 8px;
 }
 
 .gpu-details {
@@ -93,6 +100,22 @@
   width: 35px;
   margin-right: 6px;
   vertical-align: middle;
+}
+
+.team-item-card {
+  background-color: #fff; /* Or your custom color */
+  border-radius: 8px;
+  height: 100%;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  min-height: 100px; /* Ensures visual balance if content varies */
+  overflow: hidden;
+  word-wrap: break-word;
+}
+
+.column-text {
+  color: #027993;
+  font-size: 1.2rem;
+  font-weight: 500;
 }
 
 .buy-btn {

@@ -55,9 +55,12 @@ const FollowUs = () => {
   return (
     <div className="my-3">
       <h2 className="fs-5">Share To</h2>
-      <div className="d-flex align-items-center justify-content-around mt-3">
+      <div className="d-flex flex-wrap justify-content-start gap-3 mt-3">
         {data.map((icon, idx) => (
-          <a href={icon.link} className="share-icon" key={idx}>
+          <a
+            className="share-icon d-flex align-items-center justify-content-center"
+            key={idx}
+          >
             {icon.icon}
           </a>
         ))}
