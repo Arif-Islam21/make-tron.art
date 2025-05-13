@@ -98,15 +98,15 @@ const home = () => {
 
   return (
     <div id="app" className="a-t-1 no-4">
+      <Header
+        selectedLanguage={selectedLanguage}
+        toggleLangPopup={toggleLangPopup}
+        toggleTelegramPopUp={toggleTelegramPopUp}
+      ></Header>
       <div
         home-nav=""
         className="layout-tab-bar box-border min-h-full w-full px-$mg pb-60px"
       >
-        <Header
-          selectedLanguage={selectedLanguage}
-          toggleLangPopup={toggleLangPopup}
-          toggleTelegramPopUp={toggleTelegramPopUp}
-        ></Header>
         <div className="index-wrap">
           {/* <HomeNotice></HomeNotice> */}
           <HomeTimer />

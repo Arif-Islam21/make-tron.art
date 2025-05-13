@@ -2051,7 +2051,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--bg-weight);
+  /* background: var(--bg-weight); */
   margin-right: 8px;
 }
 
@@ -25320,8 +25320,8 @@
   flex-shrink: 0;
   align-items: center;
   justify-content: center;
-  height: 43px !important;
-  margin-top: 100px;
+  /* height: 43px !important; */
+  /* margin-top: 100px; */
 }
 .base-list[fin-record] {
   display: flex;

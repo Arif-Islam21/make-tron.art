@@ -1615,7 +1615,7 @@ ul {
 
 :root,
 :host {
-  --van-popup-background: var(--van-background-2);
+  --van-popup-background: #1c1c1a;
   --van-popup-transition: transform var(--van-duration-base);
   --van-popup-round-radius: 16px;
   --van-popup-close-icon-size: 22px;
@@ -8928,7 +8928,7 @@ video {
 
 .rd-12px,
 .rounded-12px {
-  border-radius: 12px;
+  border-radius: 3px;
 }
 
 .rd-15px {
@@ -9055,7 +9055,9 @@ video {
 
 .bg-\#F7F8FA {
   --un-bg-opacity: 1;
-  background-color: rgba(247, 248, 250, var(--un-bg-opacity));
+  background-color: #383847;
+  border-bottom: 1px solid white;
+  color: #fff;
 }
 
 .bg-\#facc15\! {
@@ -10093,7 +10095,7 @@ video {
 
 .text-\#86909c {
   --un-text-opacity: 1;
-  color: rgba(134, 144, 156, var(--un-text-opacity));
+  color: #fff;
 }
 
 .text-\#bbbabf {
@@ -24614,7 +24616,7 @@ input:-webkit-autofill:active {
   --mg: 16px;
   --btn-bg3: #fcecb9;
   --btn-bg4: #efc26f;
-  --card-bg: #f4f3ea;
+  --card-bg: #1c1c1a;
   --shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 

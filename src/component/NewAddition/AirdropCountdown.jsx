@@ -46,11 +46,11 @@ const AirdropCountdown = () => {
   }, []);
 
   return (
-    <div className="card timer-card my-4 text-center text-white mx-auto p-3">
+    <div className="card timer-card my-4 text-center text-white mx-auto p-2">
       <h5 className="mb-3 fw-bold fs-5">
         Airdrop Countdown <i className="bi bi-info-circle"></i>
       </h5>
-      <div className="d-flex justify-content-center gap-3">
+      <div className="d-flex justify-content-between align-items-center gap-2">
         <div className="time-box">
           <div className="time-value">{timeLeft.days}</div>
           <div className="time-label">Days</div>

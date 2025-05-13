@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
+import SingleHeader from "./SingleHeader";
 
 const LanguagePopUp = ({
   isLanguageVisible,
@@ -125,7 +126,7 @@ const LanguagePopUp = ({
         id="hideMine"
         role="dialog"
         className="van-popup van-popup--round van-popup--bottom overflow-hidden"
-        style={{ zIndex: "2003", height: "50%" }}
+        style={{ zIndex: "2003", height: "80%" }}
         onClick={(e) => e.stopPropagation()}
       >
         <div className=":uno: m-10px h-full flex flex-col overflow-hidden a-t-26">
@@ -141,7 +142,7 @@ const LanguagePopUp = ({
           </div>
           <ul
             id="myList"
-            className=":uno: grid grid-cols-3 mx-auto my-10px max-w-720px w-full gap-3 overflow-y-auto pb-3"
+            className=":uno: grid grid-cols-1 mx-auto my-10px max-w-720px w-full gap-3 overflow-y-auto pb-3"
           >
             {filteredLanguages.length > 0 ? (
               filteredLanguages.map((language, index) => (

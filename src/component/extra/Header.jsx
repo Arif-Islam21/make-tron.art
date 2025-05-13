@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import { FaTelegramPlane } from "react-icons/fa";
 import { IoMail } from "react-icons/io5";
+import "../../styles/authTop.css";
 
 const Header = ({ toggleLangPopup, toggleTelegramPopUp }) => {
   const [isScrolled, setScroll] = useState(false);
@@ -86,10 +87,17 @@ const Header = ({ toggleLangPopup, toggleTelegramPopUp }) => {
       id="navbar"
       className={
         isScrolled
-          ? "header nav-bar-wrap h-style is-scroll-state"
+          ? "header nav-bar-wrap  h-style is-scroll-state"
           : "header nav-bar-wrap h-style"
       }
     >
+      <div
+        className="telegram-suport cursor-pointer mx-2"
+        // className="base-help-btn cursor-pointer"
+        onClick={toggleTelegramPopUp}
+      >
+        <FaTelegramPlane color="#fff" size={26} />
+      </div>
       <div className="nav-bar ">
         <div id="navBarItem26" className=":uno: nav-bar-content h-full w-full">
           <div className="w-full flex items-center justify-center">
@@ -103,24 +111,24 @@ const Header = ({ toggleLangPopup, toggleTelegramPopUp }) => {
             </div>
 
             <div className="right">
-              <Link to="/notice" className="base-alarm-logo-btn cursor-pointer">
-                <IoMail size={18} />
-              </Link>
-              <div
-                className=" cursor-pointer mx-2"
-                // className="base-help-btn cursor-pointer"
-                onClick={toggleTelegramPopUp}
-              >
-                <FaTelegramPlane color="#085a82" size={26} />
-              </div>
-              <div>
-                <div className="base-lang-wrap" onClick={toggleLangPopup}>
+              <div className="mx-3">
+                <div
+                  className="base-lang-wrap language-button"
+                  onClick={toggleLangPopup}
+                >
                   <div className="i-ph:globe mr-2px text-18px c-$btn-text"></div>
                   <span className="c-$btn-text" id="languageSelect">
                     {displayLanguage}
                   </span>
                 </div>
               </div>
+
+              <Link
+                to="/notice"
+                className="base-alarm-logo-btn language-button cursor-pointer"
+              >
+                <IoMail size={18} />
+              </Link>
             </div>
           </div>
         </div>
