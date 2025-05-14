@@ -7,3 +7,12 @@
   color: #0a58ca;
   text-decoration: none;
 }
+.wheel-image {
+  height: 200px;
+  width: 200px;
+}
+
+.details-container {
+  background-color: gray;
+  color: whitesmoke;
+}

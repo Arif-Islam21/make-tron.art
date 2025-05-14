@@ -3,6 +3,10 @@ import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import banner from "../../assets/images/slider/homeSlider-3.png";
+import lottery from "../../assets/images/piCoins/images/lottery.png";
+import "../../styles/anouncement.css";
+import { Button } from "react-bootstrap";
+import { MdDoubleArrow } from "react-icons/md";
 
 const Announcement = () => {
   const { t } = useTranslation();
@@ -65,17 +69,17 @@ const Announcement = () => {
   const [show, setShow] = useState(false);
   const [currentMessageIndex, setCurrentMessageIndex] = useState(0);
 
-  // useEffect(() => {
-  //   // Show the announcement after 2 seconds
-  //   const showTimeout = setTimeout(() => {
-  //     setShow(true);
-  //   }, 2000);
+  useEffect(() => {
+    // Show the announcement after 2 seconds
+    const showTimeout = setTimeout(() => {
+      setShow(true);
+    }, 2000);
 
-  //   // Clear timeout if the component unmounts
-  //   return () => {
-  //     clearTimeout(showTimeout);
-  //   };
-  // }, []);
+    // Clear timeout if the component unmounts
+    return () => {
+      clearTimeout(showTimeout);
+    };
+  }, []);
 
   const handleClose = () => {
     setShow(false);
@@ -99,22 +103,87 @@ const Announcement = () => {
       className={`van-popup van-popup--round van-popup--center van-safe-area-bottom van-popup-customer anounce-none ${
         show ? "show" : ""
       }`}
-      style={{ zIndex: "2003", width: "95%", maxWidth: "620px" }}
+      style={{
+        zIndex: "2003",
+        width: "100%",
+        maxWidth: "620px",
+      }}
     >
       <div data-v-909b9c13="" className="announce-wrap a-t-26">
         <div data-v-909b9c13="" className="container-card email-box p-0!">
-          <div className="mb-12px pt-12px text-center text-20px font-bold text-$btn-text">
+          {/* <div className="mb-12px pt-12px text-center text-20px font-bold text-$btn-text">
             <h4>{t("announcement")}</h4>
-          </div>
-          <div
+          </div> */}
+          {/* <div
             data-v-909b9c13=""
             className="mx-auto h-10px w-95% rounded-full bg-$primary"
-          ></div>
-          <div
+          ></div> */}
+          {/* <div
             className="content absolute left-50% top-60px h-310px w-90% translate-x-[-50%] overflow-y-auto p-5px text-black shadow bg-white!"
             dangerouslySetInnerHTML={{ __html: messages[currentMessageIndex] }}
-          />
-          <div className="mt-320px w-full" style={{ marginTop: "327px" }}>
+          /> */}
+
+          <div className="content absolute left-50% top-60px h-310px w-90% translate-x-[-50%] overflow-y-auto p-5px text-black shadow ">
+            <div className="d-flex align-items-center justify-content-center py-4">
+              <img
+                src={lottery}
+                className="wheel-image"
+                alt="lottery wheel image"
+              />
+            </div>
+            <h2 className="text-center">Number Of slots available: 0</h2>
+            <div className="d-flex align-items-center justify-content-center">
+              <Button variant="primary" className="w-75  my-4">
+                LOTTERY
+              </Button>
+            </div>
+            <div className="details-container">
+              <p className="my-1">
+                New users can participate in the lucky draw after registration
+                and win 150-100000 Trump Coins
+              </p>
+              <p className="my-1">
+                Invite team level 1 users who deposit more than 100 USDT in a
+                single transaction to get 1 lucky draw opportunity.
+              </p>
+              <p className="my-1">
+                Spend USDT to purchase mining power gift pack rewards:
+              </p>
+              <p className="my-1">
+                A single deposit of 89 USDT will get you 1 lucky draw
+                opportunity.
+              </p>
+              <p className="my-1">
+                A single deposit of 299 USDT will get 2 lucky draw
+                opportunities.
+              </p>
+              <p className="my-1">
+                A single deposit of 999 USDT will get 4 lucky draw
+                opportunities.
+              </p>
+              <p className="my-1">
+                A single deposit of 1999 USDT will get 6 lucky draw
+                opportunities.
+              </p>
+              <p className="my-1">
+                A single deposit of 3999 USDT will get you 8 lucky draw
+                opportunities.
+              </p>
+              <p className="my-1">
+                A single deposit of 6999 USDT or more will get 10 lucky draw
+                opportunities.
+              </p>
+              <p className="my-1">
+                The maximum X Empire base bonus available in the lottery is
+                150-100000 Trump Coin.
+              </p>
+            </div>
+            <h2 className="d-flex align-items-center gap-3 text-white justify-content-center my-3 fs-4">
+              Invite Now <MdDoubleArrow />
+            </h2>
+          </div>
+
+          <div className="mt-320px w-full" style={{ marginTop: "387px" }}>
             <div data-v-909b9c13="" className="mt-10px flex justify-around">
               {currentMessageIndex === 0 && (
                 <div className="mx-auto inline" onClick={handleClose}>

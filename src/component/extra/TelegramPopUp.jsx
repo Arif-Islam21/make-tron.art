@@ -46,7 +46,7 @@ const TelegramPopUp = ({ isTelegramVisible, toggleTelegramPopUp }) => {
         style={{ zIndex: "2011", height: "50%" }}
       >
         <div className=":uno: m-10px h-full flex flex-col overflow-hidden a-t-26">
-          <div className="text-center text-lg font-bold text-#1d2129">
+          <div className="text-center text-lg font-bold text-#fff">
             {t("online_service")}
           </div>
           <div className="my-10px text-center text-sm text-#86909c">
@@ -62,7 +62,7 @@ const TelegramPopUp = ({ isTelegramVisible, toggleTelegramPopUp }) => {
                 src={telegramIcon}
                 alt="Telegram"
               />
-              <span className=":uno: ml-10px text-#1d2129">MAKE-TRON</span>
+              <span className=":uno: ml-10px text-#fff">Pi Coin</span>
               <div className="i-ic-round-keyboard-arrow-right ml-auto text-20px text-#86909c"></div>
             </li>
           </ul>

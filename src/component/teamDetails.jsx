@@ -19,6 +19,7 @@ import "../assets/css/style8.css";
 import "../assets/css/style9.css";
 import "../assets/css/style10.css";
 import "../assets/css/style11.css";
+import "../styles/team.css";
 
 //component
 // import SupportLink from "./extra/supportLink";
@@ -36,7 +37,7 @@ const Financial = () => {
   const level = query.get("level");
 
   const [data, setData] = useState({});
-  console.log(data?.rebetas);
+  console.log(data);
   const [isLoading, setIsLoading] = useState(false); // State to control loader visibility
 
   useEffect(() => {
@@ -87,6 +88,7 @@ const Financial = () => {
   const toggleTelegramPopUp = () => {
     setIsTelegramVisible(!isTelegramVisible);
   };
+
   return (
     <div>
       <div id="app" className="a-t-26 no-4">
@@ -94,31 +96,50 @@ const Financial = () => {
           <SingleHeader></SingleHeader>
 
           <div team-details="" className="team-detail-wrap p-$mg">
-
-              <Table responsive striped bordered className="bg-white">
-                <thead>
-                  <tr className="text-center">
-                    <th>Account</th>
-                    <th>Commission</th>
-                    <th>Date</th>
-                  </tr>
-                </thead>
-                <tbody className="text-center">
-                  {data?.rebetas?.length > 0 ? (
-                    data.rebetas.map((rebeta) => (
-                      <tr key={rebeta.id}>
-                        <td>{formatEmailOrPhone(rebeta.email_phone)}</td>
-                        <td>{parseFloat(rebeta.commission).toFixed(2)}</td>
-                        <td>{new Date(rebeta.joining_date).toLocaleString()}</td>
-                      </tr>
-                    ))
-                  ) : (
-                    <tr>
-                      <td colSpan={3}>No Data</td>
+            {/* <Table responsive striped bordered className="bg-white">
+              <thead>
+                <tr className="text-center">
+                  <th>Accountss</th>
+                  <th>Commission</th>
+                  <th>Date</th>
+                </tr>
+              </thead>
+              <tbody className="text-center">
+                {data?.rebetas?.length > 0 ? (
+                  data.rebetas.map((rebeta) => (
+                    <tr key={rebeta.id}>
+                      <td>{formatEmailOrPhone(rebeta.email_phone)}</td>
+                      <td>{parseFloat(rebeta.commission).toFixed(2)}</td>
+                      <td>{new Date(rebeta.joining_date).toLocaleString()}</td>
                     </tr>
-                  )}
-                </tbody>
-              </Table>
+                  ))
+                ) : (
+                  <tr>
+                    <td colSpan={3}>No Data</td>
+                  </tr>
+                )}
+              </tbody>
+            </Table> */}
+          </div>
+
+          <div className="details-container">
+            <h2 className="text-white fs-6 fw-semibold">
+              ${formatEmailOrPhone("history.hello@GoMail.com")}
+            </h2>
+            <div>
+              <div className="d-flex align-items-center justify-content-between my-2">
+                <h3 className="w-100 text-gray">Registration:</h3>
+                <h3 className="text-start w-100">13/05/2025</h3>
+              </div>
+              <div className="d-flex align-items-center justify-content-between my-2">
+                <h3 className="w-100 text-gray">Date:</h3>
+                <h3 className="text-start w-100">13/05/2025</h3>
+              </div>
+              <div className="d-flex align-items-center justify-content-between my-2">
+                <h3 className="w-100 text-gray">First Level Invite Count:</h3>
+                <h3 className="text-start w-100">0</h3>
+              </div>
+            </div>
           </div>
         </div>
       </div>

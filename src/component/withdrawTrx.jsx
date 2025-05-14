@@ -168,13 +168,13 @@ const withdraw = () => {
                 >
                   TRX
                 </Link>
-                <Link
+                {/* <Link
                   to="/withdraw-trx"
                   id="trc20Usdt"
                   className="trx-btn my-2"
                 >
                   BEP 20-USDT
-                </Link>
+                </Link> */}
               </div>
             </div>
             {/* Withdrawal method ends */}
@@ -222,11 +222,11 @@ const withdraw = () => {
 
               <div className="d-flex align-items-center gap-3 my-1">
                 <h3>minimum withdrawal amount:</h3>
-                <h4 className="fs-6 fw-semibold">5000USDT</h4>
+                <h4 className="fs-6 fw-semibold">4 TRX</h4>
               </div>
               <div className="d-flex align-items-center gap-3 my-1">
                 <h3>maximum withdrawal amount:</h3>
-                <h4 className="fs-6 fw-semibold">999999</h4>
+                <h4 className="fs-6 fw-semibold">60 TRX</h4>
               </div>
 
               <div className="base-input is-password">

@@ -2162,7 +2162,7 @@ ul {
   width: 100%;
   height: 100%;
   opacity: 1;
-  background: #180edc;
+  background: #24424D;
   box-sizing: border-box;
   color: white;
 }
@@ -28520,7 +28520,7 @@ body {
 }
 html {
   --vh: 5.01px; /* Custom viewport height */
-  --primary: #295af6; /* Primary color */
+  --primary: #24424D; /* Primary color */
   --primary-second: #0a38cc; /* Secondary primary color (same as primary) */
   --bg: linear-gradient(
     90deg,
