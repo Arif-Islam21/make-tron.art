@@ -9055,10 +9055,11 @@ video {
 
 .bg-\#F7F8FA {
   --un-bg-opacity: 1;
-  background-color: #383847;
+  background-color: rgba(128, 128, 128, 0.176);
   border-bottom: 1px solid white;
   color: #fff;
-}
+  border-radius: 10px;
+} 
 
 .bg-\#facc15\! {
   --un-bg-opacity: 1 !important;

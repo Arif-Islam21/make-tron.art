@@ -40,17 +40,16 @@
 .swap-container {
   border-radius: 10px;
   padding: 2rem;
-  background-color: gray;
+  background-color: #383847;
   max-width: 650px;
-  margin: 30px auto;
+  margin: 30px 28px;
 }
 .swap-container-btn {
   max-width: 650px;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  margin: 0 auto;
+  margin: 30px 28px;
 }
 .pi-coin {
   height: 30px;

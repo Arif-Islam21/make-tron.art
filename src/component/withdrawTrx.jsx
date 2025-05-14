@@ -226,7 +226,7 @@ const withdraw = () => {
               </div>
               <div className="d-flex align-items-center gap-3 my-1">
                 <h3>maximum withdrawal amount:</h3>
-                <h4 className="fs-6 fw-semibold">60 TRX</h4>
+                <h4 className="fs-6 fw-semibold">70000 TRX</h4>
               </div>
 
               <div className="base-input is-password">
@@ -291,7 +291,7 @@ const withdraw = () => {
           </div>
         </div>
 
-        <div className="mx-5 pb-4 mt-2">
+        {/* <div className="mx-5 pb-4 mt-2">
           <h2 className="d-flex align-items-center justify-content-start gap-2 fs-5">
             <IoWarning /> <p>Warm reminder</p>
           </h2>
@@ -316,7 +316,7 @@ const withdraw = () => {
             currencies! Please check the bound wallet address when withdrawing
             money!
           </p>
-        </div>
+        </div> */}
       </div>
       {/* <SupportLink /> */}
       <TelegramPopUp
