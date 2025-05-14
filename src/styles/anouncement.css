@@ -31,3 +31,61 @@
 .content-container {
   border-radius: 8px;
 }
+.img-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 12px auto;
+  position: relative;
+}
+.wheel-img {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 100% 100%;
+  transform-origin: center center;
+  transform: rotate(-22.5deg);
+  overflow: hidden;
+}
+.roulette-pointer {
+  width: 40px;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(0);
+}
+.draw-wheel-box {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  display: flex;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  transform: rotate(-45deg);
+  overflow: hidden;
+}
+.prize {
+  position: absolute;
+  width: 90px;
+  height: 125px;
+  top: 1px;
+  transform: translate(50%);
+  transform-origin: bottom center;
+  padding-top: 30px;
+  box-sizing: border-box;
+}
+.custom-modal .modal-content {
+  background-color: #00000069;
+  color: whitesmoke;
+}
+.custom-modal-btn {
+  padding: 12px 66px;
+  font-weight: 600;
+}

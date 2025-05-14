@@ -8,6 +8,7 @@ import "../../styles/anouncement.css";
 import { Button } from "react-bootstrap";
 import { MdDoubleArrow } from "react-icons/md";
 import { RxCrossCircled } from "react-icons/rx";
+import Lottery from "../NewAddition/Lottery";
 
 const Announcement = () => {
   const { t } = useTranslation();
@@ -71,6 +72,7 @@ const Announcement = () => {
 
   const [show, setShow] = useState(false);
   const [currentMessageIndex, setCurrentMessageIndex] = useState(0);
+  const [modalShow, setModalShow] = useState(false);
 
   useEffect(() => {
     // Show the announcement after 2 seconds
@@ -98,6 +100,7 @@ const Announcement = () => {
 
   const handleAgree = () => {
     setShow(false);
+    setModalShow(true);
   };
 
   return (
@@ -116,7 +119,7 @@ const Announcement = () => {
         <div data-v-909b9c13="" className="container-card email-box p-0!">
           <div className="mb-12px position-relative pt-12px text-center text-20px font-bold text-$btn-text">
             <h4>{t("announcement")}</h4>
-            <button onClick={handleClose} className="top-close-btn">
+            <button onClick={handleAgree} className="top-close-btn">
               <RxCrossCircled size={28} />
             </button>
           </div>
@@ -228,6 +231,7 @@ const Announcement = () => {
             </div>
           </div>
           {/* buttons ends */}
+          <Lottery show={modalShow} onHide={() => setModalShow(false)} />
         </div>
       </div>
     </div>
