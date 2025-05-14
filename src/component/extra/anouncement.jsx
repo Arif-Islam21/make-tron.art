@@ -21,13 +21,15 @@ const Announcement = () => {
         <p><strong>Minimum Investment:</strong> 10 USDT</p>
         <p><strong>Minimum Withdraw :</strong> 2 USDT</p>
   
-        <p><strong>Official Support:</strong> <a href="https://t.me/CAREMAKETRON09" target="_blank">https://t.me/CAREMAKETRON09</a></p>
+        <p><strong>Official Support:</strong> <a href="t.me/PiAnnouncements
+" target="_blank">t.me/PiAnnouncements
+</a></p>
   
         <p><strong>Official registration link:</strong><br />
-        <a href="https://www.make-tron.art/#/register?ic=7365654" target="_blank">https://www.make-tron.art/#/register?ic=7365654</a></p>
+        <a href="https://youtube.com/@picoreteam?si=64ppds4C1nO1-VcF" target="_blank">https://youtube.com/@picoreteam?si=64ppds4C1nO1-VcF</a></p>
   
         <p><strong>Official alternate website:</strong><br />
-        <a href="https://www.make-tron.art" target="_blank">https://www.make-tron.art</a></p>
+        <a href="https://x.com/PiCoreTeam?t=Wwve3wxIS5B_boaQYXvPsQ&s=09" target="_blank">https://x.com/PiCoreTeam?t=Wwve3wxIS5B_boaQYXvPsQ&s=09</a></p>
       </div>
   
       <div class="section">
@@ -101,7 +103,7 @@ const Announcement = () => {
   return (
     <div
       id="homeModal"
-      className={`van-popup van-popup--round van-popup--center van-safe-area-bottom van-popup-customer anounce-none ${
+      className={`van-popup  van-popup--round van-popup--center van-safe-area-bottom van-popup-customer anounce-none ${
         show ? "show" : ""
       }`}
       style={{
@@ -112,19 +114,22 @@ const Announcement = () => {
     >
       <div data-v-909b9c13="" className="announce-wrap a-t-26">
         <div data-v-909b9c13="" className="container-card email-box p-0!">
-          {/* <div className="mb-12px pt-12px text-center text-20px font-bold text-$btn-text">
+          <div className="mb-12px position-relative pt-12px text-center text-20px font-bold text-$btn-text">
             <h4>{t("announcement")}</h4>
-          </div> */}
+            <button onClick={handleClose} className="top-close-btn">
+              <RxCrossCircled size={28} />
+            </button>
+          </div>
           {/* <div
             data-v-909b9c13=""
             className="mx-auto h-10px w-95% rounded-full bg-$primary"
           ></div> */}
-          {/* <div
-            className="content absolute left-50% top-60px h-310px w-90% translate-x-[-50%] overflow-y-auto p-5px text-black shadow bg-white!"
+          <div
+            className="content content-container absolute left-50% top-60px h-310px w-90% translate-x-[-50%] overflow-y-auto p-5px text-black shadow border-2 text-white"
             dangerouslySetInnerHTML={{ __html: messages[currentMessageIndex] }}
-          /> */}
+          />
 
-          <div className="content absolute left-50% top-60px h-100 w-90% translate-x-[-50%] overflow-y-auto p-5px pb-5 shadow ">
+          {/* <div className="content absolute left-50% top-60px h-100 w-90% translate-x-[-50%] overflow-y-auto p-5px pb-5 shadow ">
             <div className="d-flex align-items-center justify-content-center py-4">
               <img
                 src={lottery}
@@ -189,11 +194,11 @@ const Announcement = () => {
                 <RxCrossCircled />
               </button>
             </div>
-          </div>
+          </div> */}
 
-          {/* <div className="mt-320px w-full" style={{ marginTop: "387px" }}>
+          <div className="mt-320px w-full" style={{ marginTop: "347px" }}>
             <div data-v-909b9c13="" className="mt-10px flex justify-around">
-              {currentMessageIndex === 0 && (
+              {/* {currentMessageIndex === 0 && (
                 <div className="mx-auto inline" onClick={handleClose}>
                   {t("close")}
                 </div>
@@ -212,9 +217,16 @@ const Announcement = () => {
                 <div className="mx-auto inline" onClick={handleAgree}>
                   {t("i_know")}
                 </div>
-              )}
+              )} */}
+              <Button
+                variant="primary"
+                className="mx-auto inline"
+                onClick={handleAgree}
+              >
+                {t("i_know")}
+              </Button>
             </div>
-          </div> */}
+          </div>
           {/* buttons ends */}
         </div>
       </div>

@@ -20,3 +20,14 @@
   background-color: transparent;
   color: white;
 }
+.top-close-btn {
+  background-color: transparent;
+  color: white;
+  font-size: 2rem;
+  position: absolute;
+  top: 6px;
+  right: 8px;
+}
+.content-container {
+  border-radius: 8px;
+}
