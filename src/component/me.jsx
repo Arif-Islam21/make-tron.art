@@ -37,8 +37,7 @@ import Header from "./extra/Header";
 import SupportLink from "./extra/supportLink";
 import LanguagePopUp from "./extra/LanguagePopUp";
 import TelegramPopUp from "./extra/TelegramPopUp";
-import { FaLanguage } from "react-icons/fa6";
-
+import piBanner from "../assets/images/piCoins/images/piCoinBanner.jpg";
 import {
   FaMoneyBillTransfer,
   FaMoneyBillTrendUp,
@@ -147,6 +146,9 @@ const HomePage = () => {
           toggleLangPopup={toggleLangPopup}
           toggleTelegramPopUp={toggleTelegramPopUp}
         ></Header>
+        <div>
+          <img src={piBanner} alt="pi banner" className="pi-banner" />
+        </div>
         <div data-v-f004e884="" className="mine-wrap">
           <div data-v-f004e884="" className="mine-wrap-content">
             <div data-v-f004e884="" className="top-info">
@@ -224,7 +226,7 @@ const HomePage = () => {
                   </div>
                 </div>
               </Link>
-              <Link data-v-f004e884="" to="/account" className="">
+              <Link data-v-f004e884="" to="/financial" className="">
                 <div data-v-f004e884="" className="item">
                   <div data-v-f004e884="" className="icon-box">
                     <FaMoneyBillTrendUp size={23} />
@@ -234,7 +236,7 @@ const HomePage = () => {
                   </div>
                 </div>
               </Link>
-              <Link data-v-f004e884="" to="/financial" className="">
+              <Link data-v-f004e884="" to="/swap" className="">
                 <div data-v-f004e884="" className="item">
                   <div data-v-f004e884="" className="icon-box">
                     <BiTransferAlt size={23} />
@@ -247,7 +249,7 @@ const HomePage = () => {
             </div>
             {/* me important links */}
             <div data-v-f004e884="" className="secondary-tools-part">
-              <Link data-v-f004e884="" className="">
+              <Link to="/team" data-v-f004e884="" className="">
                 <div data-v-f004e884="" className="item">
                   <div data-v-f004e884="" className="flex items-center">
                     <div data-v-f004e884="" className="icon-box">
@@ -347,7 +349,11 @@ const HomePage = () => {
                   ></div>
                 </div>
               </Link>
-              <Link data-v-f004e884="" className="">
+              <Link
+                onClick={toggleTelegramPopUp}
+                data-v-f004e884=""
+                className=""
+              >
                 <div data-v-f004e884="" className="item">
                   <div data-v-f004e884="" className="flex items-center">
                     <div data-v-f004e884="" className="icon-box">

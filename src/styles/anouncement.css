@@ -16,3 +16,7 @@
   background-color: gray;
   color: whitesmoke;
 }
+.close-btn {
+  background-color: transparent;
+  color: white;
+}

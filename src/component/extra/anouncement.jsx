@@ -7,6 +7,7 @@ import lottery from "../../assets/images/piCoins/images/lottery.png";
 import "../../styles/anouncement.css";
 import { Button } from "react-bootstrap";
 import { MdDoubleArrow } from "react-icons/md";
+import { RxCrossCircled } from "react-icons/rx";
 
 const Announcement = () => {
   const { t } = useTranslation();
@@ -123,7 +124,7 @@ const Announcement = () => {
             dangerouslySetInnerHTML={{ __html: messages[currentMessageIndex] }}
           /> */}
 
-          <div className="content absolute left-50% top-60px h-310px w-90% translate-x-[-50%] overflow-y-auto p-5px text-black shadow ">
+          <div className="content absolute left-50% top-60px h-100 w-90% translate-x-[-50%] overflow-y-auto p-5px pb-5 shadow ">
             <div className="d-flex align-items-center justify-content-center py-4">
               <img
                 src={lottery}
@@ -131,7 +132,9 @@ const Announcement = () => {
                 alt="lottery wheel image"
               />
             </div>
-            <h2 className="text-center">Number Of slots available: 0</h2>
+            <h2 className="text-center text-white">
+              Number Of slots available: 0
+            </h2>
             <div className="d-flex align-items-center justify-content-center">
               <Button variant="primary" className="w-75  my-4">
                 LOTTERY
@@ -181,9 +184,14 @@ const Announcement = () => {
             <h2 className="d-flex align-items-center gap-3 text-white justify-content-center my-3 fs-4">
               Invite Now <MdDoubleArrow />
             </h2>
+            <div className="d-flex mb-4 align-items-center gap-3 text-white justify-content-center my-3 fs-4">
+              <button onClick={handleClose} className="close-btn">
+                <RxCrossCircled />
+              </button>
+            </div>
           </div>
 
-          <div className="mt-320px w-full" style={{ marginTop: "387px" }}>
+          {/* <div className="mt-320px w-full" style={{ marginTop: "387px" }}>
             <div data-v-909b9c13="" className="mt-10px flex justify-around">
               {currentMessageIndex === 0 && (
                 <div className="mx-auto inline" onClick={handleClose}>
@@ -206,7 +214,7 @@ const Announcement = () => {
                 </div>
               )}
             </div>
-          </div>
+          </div> */}
           {/* buttons ends */}
         </div>
       </div>

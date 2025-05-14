@@ -42,6 +42,7 @@ import RechargeBep from "./component/rechargeBep";
 import RechargeBnb from "./component/rechargeBnb";
 import AnnouncementPage from "./component/partial/AnnouncementPage";
 import TelegramLogin from "./component/auth/TelegramLogin";
+import Swap from "./component/NewAddition/Swap";
 
 function App() {
   // axios.defaults.baseURL = "http://127.0.0.1:8000/"; // local
@@ -289,6 +290,14 @@ function App() {
               element={
                 <PrivateRoute>
                   <AnnouncementPage />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              path="/swap"
+              element={
+                <PrivateRoute>
+                  <Swap />
                 </PrivateRoute>
               }
             />
