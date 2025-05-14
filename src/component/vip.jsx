@@ -280,7 +280,7 @@ const vip = () => {
           <Tabs>
             <TabList className="tab-header">
               <Tab className="vip-tab">Mining Tools</Tab>
-              <Tab className="vip-tab">Upgrade</Tab>
+              {/* <Tab className="vip-tab">Upgrade</Tab> */}
             </TabList>
 
             <TabPanel>
@@ -291,14 +291,14 @@ const vip = () => {
               </div>
               <VipTabNewAddition />
             </TabPanel>
-            <TabPanel>
+            {/* <TabPanel>
               <div className="d-flex align-items-center justify-content-end">
                 <h3 className="d-flex align-items-center gap-1 fs-6">
                   Purchase History <IoIosArrowForward />
                 </h3>
               </div>
               <VipUpgrade />
-            </TabPanel>
+            </TabPanel> */}
           </Tabs>
         </div>
 

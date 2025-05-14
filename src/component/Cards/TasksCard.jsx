@@ -6,39 +6,47 @@ import { IoIosArrowForward } from "react-icons/io";
 const TasksCard = () => {
   return (
     <div>
-      <div className="card custom-card d-flex flex-row align-items-center p-3 mb-3">
-        <div className="flex-grow-1">
-          <div className="d-flex justify-content-between align-items-center mb-1">
-            <span className="card-title mb-0 fw-bold text-primary">
-              Join the official channel
-            </span>
+      <div className="card custom-card d-flex flex-column align-items-center p-3 mb-3">
+        <div className="d-flex align-items-center justify-content-between w-100">
+          <span className="card-title mb-0 fw-bold text-primary">
+            Join the official channel
+          </span>
+          <div className="d-flex align-items-center gap-2 justify-content-between">
             <span className="reward-text">+250.00</span>
+            <img
+              src={icon}
+              alt="User"
+              className="rounded-circle user-img mb-2"
+            />
           </div>
+        </div>
+        <div className="d-flex align-items-center justify-content-between my-1 w-100 ms-3">
           <p className="card-subtitle  mb-0">
             Join our official channel
             <br />
             for more information
           </p>
-        </div>
-        <div className="d-flex flex-column align-items-center ms-3">
-          <img src={icon} alt="User" className="rounded-circle user-img mb-2" />
           <button className=" btn-sm completed-btn" disabled>
             Completed
           </button>
         </div>
       </div>
-      <div className="card custom-card d-flex flex-row align-items-center p-3 mb-3">
-        <div className="flex-grow-1">
-          <div className="d-flex justify-content-between align-items-center mb-1">
-            <span className="card-title mb-0 fw-bold text-primary">
-              Check in daily
-            </span>
+      <div className="card custom-card d-flex flex-column align-items-center p-3 mb-3">
+        <div className="d-flex align-items-center justify-content-between w-100">
+          <span className="card-title mb-0 fw-bold text-primary">
+            Check in daily
+          </span>
+          <div className="d-flex align-items-center gap-2 justify-content-between">
             <span className="reward-text">+150.00</span>
+            <img
+              src={icon}
+              alt="User"
+              className="rounded-circle user-img mb-2"
+            />
           </div>
-          <p className="card-subtitle  mb-0">daily tasks</p>
         </div>
-        <div className="d-flex flex-column align-items-center ms-3">
-          <img src={icon} alt="User" className="rounded-circle user-img mb-2" />
+        <div className="d-flex align-items-center justify-content-between my-1 w-100 ms-3">
+          <p className="card-subtitle  mb-0">daily tasks</p>
           <button className=" btn-sm completed-btn" disabled>
             Check In
           </button>

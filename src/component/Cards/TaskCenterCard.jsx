@@ -30,7 +30,7 @@ const TaskCenterCard = ({ reward }) => {
               style={{
                 width: `${
                   (reward.invitees.current / reward.invitees.required) * 100
-                }`,
+                }%`,
               }}
             ></div>
           </div>

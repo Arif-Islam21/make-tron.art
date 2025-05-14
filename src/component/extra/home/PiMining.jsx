@@ -1,5 +1,6 @@
 import "../../../styles/piMining.css";
 import avater from "../../../assets/images/piCoins/images/avater.jpg";
+import pi from "../../../assets/images/piCoins/icons/piCoins.png";
 import { useEffect, useState } from "react";
 import { ProgressBar } from "react-bootstrap";
 
@@ -81,8 +82,10 @@ const PiMining = () => {
               now={(value / 500) * 100}
               label={`${((value / 5000) * 100).toFixed(1)}%`}
             />
-            <div className="value mt-2">
-              <span>{value.toFixed(2)}</span> PI
+            <div className="value d-flex align-items-center justify-content-center gap-2 mt-2">
+              <span>{value.toFixed(2)}</span>
+              <img className="pi-logo-img" src={pi} alt="" />
+              PI{" "}
             </div>
           </div>
         </div>

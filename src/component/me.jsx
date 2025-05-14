@@ -165,18 +165,32 @@ const HomePage = () => {
                         : data?.user?.email
                     )}
                   </div>
-                  <div
+                  {/* <div
                     data-v-f004e884=""
                     className="shadow px-4 bg-white text-black fw-bold text-light py-1 rounded"
                   >
                     Pi Level {data?.user?.my_vip}
-                  </div>
+                  </div> */}
                 </div>
               </div>
               <div
                 data-v-f004e884=""
                 className="user-number d-flex flex-column"
               >
+                <div
+                  data-v-f004e884=""
+                  className="user-number-item user-balance"
+                >
+                  <div data-v-f004e884="" className="title fs-6 fw-bold">
+                    {t("Total Pi")} (USDT)
+                  </div>
+                  <div data-v-f004e884="" className="number fs-4 fw-bold">
+                    {(
+                      parseFloat(data?.withdraw_balance) +
+                      parseFloat(data?.amount)
+                    ).toFixed(2)}
+                  </div>
+                </div>
                 <div
                   data-v-f004e884=""
                   className="user-number-item user-balance"
