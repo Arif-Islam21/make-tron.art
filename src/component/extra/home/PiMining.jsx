@@ -79,7 +79,7 @@ const PiMining = () => {
             <ProgressBar
               variant="success"
               animated
-              now={(value / 500) * 100}
+              now={(value / 5000) * 100}
               label={`${((value / 5000) * 100).toFixed(1)}%`}
             />
             <div className="value d-flex align-items-center justify-content-center gap-2 mt-2">

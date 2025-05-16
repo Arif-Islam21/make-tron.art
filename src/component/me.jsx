@@ -153,7 +153,7 @@ const HomePage = () => {
           <div data-v-f004e884="" className="mine-wrap-content">
             <div data-v-f004e884="" className="top-info">
               <div className="user-info-top">
-                <h2 className="fs-4 fw-semibold p-4">CH</h2>
+                {/* <h2 className="fs-4 fw-semibold p-4">CH</h2> */}
                 <div
                   data-v-f004e884=""
                   className="user-info d-flex flex-column gap-2"
@@ -165,12 +165,12 @@ const HomePage = () => {
                         : data?.user?.email
                     )}
                   </div>
-                  {/* <div
+                  <div
                     data-v-f004e884=""
                     className="shadow px-4 bg-white text-black fw-bold text-light py-1 rounded"
                   >
                     Pi Level {data?.user?.my_vip}
-                  </div> */}
+                  </div>
                 </div>
               </div>
               <div
@@ -182,7 +182,7 @@ const HomePage = () => {
                   className="user-number-item user-balance"
                 >
                   <div data-v-f004e884="" className="title fs-6 fw-bold">
-                    {t("Total Pi")} (USDT)
+                    {t("Total USDT")}
                   </div>
                   <div data-v-f004e884="" className="number fs-4 fw-bold">
                     {(
@@ -196,7 +196,7 @@ const HomePage = () => {
                   className="user-number-item user-balance"
                 >
                   <div data-v-f004e884="" className="title fs-6 fw-bold">
-                    {t("Total Pi")} (USDT)
+                    {t("Total PI COIN")}
                   </div>
                   <div data-v-f004e884="" className="number fs-4 fw-bold">
                     {(

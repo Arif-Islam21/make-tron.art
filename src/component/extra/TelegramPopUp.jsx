@@ -30,21 +30,21 @@ const TelegramPopUp = ({ isTelegramVisible, toggleTelegramPopUp }) => {
     }
   };
   const handleTelegramRedirect = () => {
-    if (telegramLink) {
-      window.location.href = "t.me/PiAnnouncements"; // Redirect to the Telegram link
-    }
+    // if (telegramLink) {
+    window.location.href = "https://t.me/PiAnnouncements"; // Redirect to the Telegram link
+    // }
   };
   const handleTwitterRedirect = () => {
-    if (telegramLink) {
-      window.location.href =
-        "https://x.com/PiCoreTeam?t=Wwve3wxIS5B_boaQYXvPsQ&s=09"; // Redirect to the Telegram link
-    }
+    // if (telegramLink) {
+    window.location.href =
+      "https://x.com/PiCoreTeam?t=Wwve3wxIS5B_boaQYXvPsQ&s=09"; // Redirect to the Telegram link
+    // }
   };
   const handleYouTubeRedirect = () => {
-    if (telegramLink) {
-      window.location.href =
-        "https://youtube.com/@picoreteam?si=64ppds4C1nO1-VcF"; // Redirect to the Telegram link
-    }
+    // if (telegramLink) {
+    window.location.href =
+      "https://youtube.com/@picoreteam?si=64ppds4C1nO1-VcF"; // Redirect to the Telegram link
+    // }
   };
 
   if (!isTelegramVisible) return null;
@@ -96,6 +96,20 @@ const TelegramPopUp = ({ isTelegramVisible, toggleTelegramPopUp }) => {
                 alt="Telegram"
               />
               <span className=":uno: ml-10px text-muted">Telegram Support</span>
+              <div className="i-ic-round-keyboard-arrow-right ml-auto text-20px text-black"></div>
+            </li>
+            <li
+              className=":uno: mb-8px flex cursor-pointer items-center rounded-12px bg-#F7F8FA p-8px"
+              onClick={handleTelegramRedirect} // Trigger redirect on click
+            >
+              <img
+                className=":uno: h-64px w-64px overflow-hidden rounded-12px"
+                src={telegramIcon}
+                alt="Telegram"
+              />
+              <span className=":uno: ml-10px text-muted">
+                Telegram Official Channel
+              </span>
               <div className="i-ic-round-keyboard-arrow-right ml-auto text-20px text-black"></div>
             </li>
             <li

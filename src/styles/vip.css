@@ -125,6 +125,7 @@
   background-color: #001aff;
   border: none;
   border-radius: 12px;
+  min-width: 100%;
 }
 
 /* PREVIOUS */

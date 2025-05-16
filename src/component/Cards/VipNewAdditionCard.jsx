@@ -3,6 +3,7 @@ import { Card, Button } from "react-bootstrap";
 import pi from "../../assets/images/piCoins/icons/piCoins.png";
 import clock from "../../assets/images/piCoins/images/clock.jpg";
 import tron from "../../assets/images/piCoins/images/tron.png";
+import { Link } from "react-router-dom";
 
 const VipNewAdditionCard = ({ item }) => {
   const { name, image, price, days, profitPerDay, durationDays } = item;
@@ -36,9 +37,13 @@ const VipNewAdditionCard = ({ item }) => {
           </div>
         </div>
 
-        <Button variant="primary" className="buy-btn mt-4 w-100">
-          BUY IT NOW
-        </Button>
+        <div className="mt-3">
+          <Link to="/recharge-method">
+            <Button variant="primary" className="buy-btn w-100">
+              BUY IT NOW
+            </Button>
+          </Link>
+        </div>
       </Card.Body>
     </Card>
   );

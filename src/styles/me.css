@@ -2,6 +2,12 @@
   width: 100%;
   display: flex;
   align-items: center;
+  justify-content: center;
+  /* max-width: fit-content; */
+  padding: 8px 4rem;
+  margin: 12px auto;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #1e1e2f, #2f2f4f, #6b4f1d);
   gap: 20px;
 }
 .user-balance {
